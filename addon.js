@@ -13,7 +13,7 @@ const channels = {
     streams: [
       {
         title: "DSports — Auto",
-        url: "https://yce5o.envivoslatam.org/dsports/tracks-v1a1/mono.m3u8?ip=200.55.245.14&token=19ac11d6306c55a10c63c6843c0be4743b4aa0b8-14-1778286159-1778232159",
+        url: "https://iaw5b.envivoslatam.org/dsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=c4b4961d9b4c1738c6780b7197acb1e537b3e390-5a-1778407346-1778353346",
       },
     ],
   },
@@ -27,11 +27,11 @@ const channels = {
     streams: [
       {
         title: "TNT Sports — Opción 1",
-        url: "https://ng0pr.envivoslatam.org/tntsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=c82f08902879fb43eab8db9973f10130a88a6e9a-75-1778289504-1778235504",
+        url: "https://yce5o.envivoslatam.org/tntsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=9abe3309fd60bd1a710d1369c6e98727e8e6618d-9b-1778407440-1778353440",
       },
       {
         title: "TNT Sports — Opción 2",
-        url: "https://edge-live32-sl.cvattv.com.ar/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzc4NDI3MDYxIiwic2lwIjoiMjAwLjU1LjI0NS4xNDUiLCJwYXRoIjoiL2xpdmUvYzZlZHMvVE5UX1Nwb3J0c19IRC9TQV9MaXZlX2Rhc2hfZW5jX0MvIiwic2Vzc2lvbl9jZG5faWQiOiI5Mzk2NDY5MDU1OTM3YWMyIiwic2Vzc2lvbl9pZCI6IiIsImNsaWVudF9pZCI6IiIsImRldmljZV9pZCI6IiIsIm1heF9zZXNzaW9ucyI6MCwic2Vzc2lvbl9kdXJhdGlvbiI6MCwidXJsIjoiaHR0cHM6Ly8yMDEuMjM1LjY2LjEyMiIsImF1ZCI6IjEwMCIsInNvdXJjZXMiOls4NSwxNDQsODYsODhdfQ==.YfOrA7R2lqP_ZO-Q-yLw6mNKfUDa-I399Z5ZGyqxqBgf16ygirpZhdpkYt2KqtuS7ll0kTReFe4odgUWSPbc3A==/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_C/TNT_Sports_HD.mpd",
+        url: "https://wf6kt.envivoslatam.org/tntsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=29b450de47ce1419b0bf496c4ba7611adad187a1-b0-1778407495-1778353495",
       },
     ],
   },
@@ -44,11 +44,11 @@ const channels = {
     streams: [
       {
         title: "ESPN Premium — Opción 1",
-        url: "https://tk0hz.envivoslatam.org/espnpremium/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=e66275eb061d0d97ff55231c8b74f572cc37a783-6b-1778296788-1778242788",
+        url: "https://iaw5b.envivoslatam.org/espnpremium/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=352c9ac852568f2007bd469eff669724d29e1c5d-dc-1778407560-1778353560",
       },
       {
         title: "ESPN Premium — Opción 2",
-        url: "https://edge-live15-hr.cvattv.com.ar/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzc4NDI3MjA1Iiwic2lwIjoiMjAwLjU1LjI0NS4xNDUiLCJwYXRoIjoiL2xpdmUvYzdlZHMvRm94X1Nwb3J0c19QcmVtaXVuX0hEL1NBX0xpdmVfZGFzaF9lbmNfQy8iLCJzZXNzaW9uX2Nkbl9pZCI6IjAwNzVkNmU1NDgyZDU4MjIiLCJzZXNzaW9uX2lkIjoiIiwiY2xpZW50X2lkIjoiIiwiZGV2aWNlX2lkIjoiIiwibWF4X3Nlc3Npb25zIjowLCJzZXNzaW9uX2R1cmF0aW9uIjowLCJ1cmwiOiJodHRwczovLzIwMS4yMzUuNjYuMTE0IiwiYXVkIjoiNTgiLCJzb3VyY2VzIjpbODUsMTQ0LDg2LDg4XX0=.Ch2QiMe2XUwt-c310iCxEVD2fYeE6mAp6LOcQUVfLPeCTQzoF455YC-qy3iJFqGH00GUXcep0hZ-NCLXjv41ig==/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_C/Fox_Sports_Premiun_HD.mpd",
+        url: "https://dw5pdgvk.fubohd.com/espnpremium/mono.m3u8?token=6ce4c9e00b4c4864f077c2d3ca9ddd1a4b4322f9-8e-1778379700-1778361700",
       },
     ],
   },
