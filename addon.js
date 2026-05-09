@@ -1,6 +1,8 @@
 const { addonBuilder, serveHTTP } = require("stremio-addon-sdk");
 const express = require("express");
 
+const PORT = process.env.PORT || 7000;
+
 const channels = {
   dsports: {
     name: "DSports",
@@ -138,6 +140,6 @@ app.use((req, res, next) => {
 // Montá el addon en Express
 app.use(require("stremio-addon-sdk").getRouter(builder.getInterface()));
 
-app.listen(7000, "0.0.0.0", () => {
-  console.log("Addon corriendo en http://192.168.18.239:7000/manifest.json");
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Addon corriendo en el puerto ${PORT}`);
 });
