@@ -52,6 +52,23 @@ const channels = {
       },
     ],
   },
+  espndeportes: {
+    name: "ESPN +",
+    poster:
+      "https://imgs.search.brave.com/bVoS1l-fg9Smd76bBVrKdAy07e5_9cgNhYaE4vN2_BA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9MNVFkSzZwWmVI/c2U5THo5dUc1cDdo/SjFCTWRFX3VxSU1N/N1dTeEJLVlJCaTgz/ZFRIdlVOT1lQSjRG/SWczNlpTeXBJPXcy/NDAtaDQ4MC1ydw",
+    logo: "https://imgs.search.brave.com/BoO3XQfLmGrGe7PEeBxPtiJC-pAhy_PM-BQvFg544rY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2ExL0VT/UE5fUHJlbWl1bV9s/b2dvLnN2Zy8yNTBw/eC1FU1BOX1ByZW1p/dW1fbG9nby5zdmcu/cG5n",
+    description: "ESPN Deportes en vivo",
+    streams: [
+      {
+        title: "ESPN + — Opción 1",
+        url: "https://dtkb.envivoslatam.org/espnplus3/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=95a7033bf7b506e474980153a5e08fd84c06f5d5-e4-1778484994-1778430994",
+      },
+      {
+        title: "ESPN + — Opción 2",
+        url: "https://plts2.envivoslatam.org/espnplus3/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=d86a5189ed2613abe5c75f5ccb387731ce2674a8-e9-1778485163-1778431163",
+      },
+    ],
+  },
 };
 
 const manifest = {
