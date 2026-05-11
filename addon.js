@@ -151,6 +151,26 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.json());
+
+app.post("/update", (req, res) => {
+  const { channel, streams } = req.body;
+
+  if (!channels[channel]) {
+    return res.status(404).json({ error: `Canal '${channel}' no existe` });
+  }
+
+  if (!Array.isArray(streams) || streams.length === 0) {
+    return res.status(400).json({ error: "streams inválidos" });
+  }
+
+  const streamsM3U8 = channels[channel].streams.filter((s) => !s.url.includes(".mpd"));
+
+  channels[channel].streams = [...streamsM3U8, ...streams];
+  console.log(`✅ ${channel} actualizado`);
+  return res.json({ ok: true });
+});
+
 // Montá el addon en Express
 app.use(require("stremio-addon-sdk").getRouter(builder.getInterface()));
 
