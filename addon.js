@@ -1,4 +1,4 @@
-const { addonBuilder, serveHTTP } = require("stremio-addon-sdk");
+const { addonBuilder } = require("stremio-addon-sdk");
 const express = require("express");
 
 const PORT = process.env.PORT || 7000;
@@ -13,7 +13,7 @@ const channels = {
     streams: [
       {
         title: "DSports — Auto",
-        url: "https://iaw5b.envivoslatam.org/dsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=c4b4961d9b4c1738c6780b7197acb1e537b3e390-5a-1778407346-1778353346",
+        url: "https://wf6kt.envivoslatam.org/dsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=8e18c5903d70f251fcd90b4b1e52f97544a4f383-07-1778581987-1778527987",
       },
     ],
   },
@@ -27,11 +27,11 @@ const channels = {
     streams: [
       {
         title: "TNT Sports — Opción 1",
-        url: "https://yce5o.envivoslatam.org/tntsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=9abe3309fd60bd1a710d1369c6e98727e8e6618d-9b-1778407440-1778353440",
+        url: "https://pvtn5y.envivoslatam.org/tntsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=34916878f8c30d8c4860e388e977a2e56999b8b1-c7-1778584686-1778530686",
       },
       {
         title: "TNT Sports — Opción 2",
-        url: "https://wf6kt.envivoslatam.org/tntsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=29b450de47ce1419b0bf496c4ba7611adad187a1-b0-1778407495-1778353495",
+        url: "https://cgxheq.fubohd.com/tntsports/mono.m3u8?token=19fd22e88147484488b5b4d3a805ca5e972d428f-ec-1778556817-1778538817",
       },
     ],
   },
@@ -44,28 +44,25 @@ const channels = {
     streams: [
       {
         title: "ESPN Premium — Opción 1",
-        url: "https://iaw5b.envivoslatam.org/espnpremium/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=352c9ac852568f2007bd469eff669724d29e1c5d-dc-1778407560-1778353560",
+        url: "https://xky9q.envivoslatam.org/espnpremium/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=6b8af1b0712202a27c736953f17f7390b6faa84f-53-1778584587-1778530587",
       },
       {
         title: "ESPN Premium — Opción 2",
-        url: "https://dw5pdgvk.fubohd.com/espnpremium/mono.m3u8?token=6ce4c9e00b4c4864f077c2d3ca9ddd1a4b4322f9-8e-1778379700-1778361700",
-      },
-    ],
-  },
-  espndeportes: {
-    name: "ESPN +",
-    poster:
-      "https://imgs.search.brave.com/bVoS1l-fg9Smd76bBVrKdAy07e5_9cgNhYaE4vN2_BA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9MNVFkSzZwWmVI/c2U5THo5dUc1cDdo/SjFCTWRFX3VxSU1N/N1dTeEJLVlJCaTgz/ZFRIdlVOT1lQSjRG/SWczNlpTeXBJPXcy/NDAtaDQ4MC1ydw",
-    logo: "https://imgs.search.brave.com/BoO3XQfLmGrGe7PEeBxPtiJC-pAhy_PM-BQvFg544rY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2ExL0VT/UE5fUHJlbWl1bV9s/b2dvLnN2Zy8yNTBw/eC1FU1BOX1ByZW1p/dW1fbG9nby5zdmcu/cG5n",
-    description: "ESPN Deportes en vivo",
-    streams: [
-      {
-        title: "ESPN + — Opción 1",
-        url: "https://dtkb.envivoslatam.org/espnplus3/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=95a7033bf7b506e474980153a5e08fd84c06f5d5-e4-1778484994-1778430994",
+        url: "https://bgfuzq.fubohd.com/espnpremium/mono.m3u8?token=087d9925d50a99d6f9e4896d60aff96f1e59aeae-cd-1778556746-1778538746",
       },
       {
-        title: "ESPN + — Opción 2",
-        url: "https://plts2.envivoslatam.org/espnplus3/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=d86a5189ed2613abe5c75f5ccb387731ce2674a8-e9-1778485163-1778431163",
+        title: "ESPN Premium HD — Opción 3",
+        url: "https://edge-live15-hr.cvattv.com.ar/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzc4NzEyNzUxIiwic2lwIjoiMjAwLjU1LjI0NS4xNDUiLCJwYXRoIjoiL2xpdmUvYzdlZHMvRm94X1Nwb3J0c19QcmVtaXVuX0hEL1NBX0xpdmVfZGFzaF9lbmNfQy8iLCJzZXNzaW9uX2Nkbl9pZCI6Ijc1NjYzNDgxNWRjZGJmYWMiLCJzZXNzaW9uX2lkIjoiIiwiY2xpZW50X2lkIjoiIiwiZGV2aWNlX2lkIjoiIiwibWF4X3Nlc3Npb25zIjowLCJzZXNzaW9uX2R1cmF0aW9uIjowLCJ1cmwiOiJodHRwczovLzIwMS4yMzUuNjYuMTE0IiwiYXVkIjoiNTgiLCJzb3VyY2VzIjpbODUsMTQ0LDg2LDg4XX0=.2qY0hBxhvkT5U13TBk75gSHFyOtYWjdmh5XBTNhU7WPplv9UCyabdEQBiBvgA1qG0LCPwK95Cgi8f3Gf3kgnwg==/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_C/Fox_Sports_Premiun_HD.mpd",
+        behaviorHints: {
+          notWebReady: true,
+          proxyHeaders: {
+            request: {
+              Origin: "https://nebunexa.life",
+              Referer: "https://nebunexa.life/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            },
+          },
+        },
       },
     ],
   },
@@ -144,7 +141,7 @@ const app = express();
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST,OPTIONS");
 
   res.setHeader("ngrok-skip-browser-warning", "true");
 
