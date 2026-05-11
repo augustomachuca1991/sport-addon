@@ -50,20 +50,6 @@ const channels = {
         title: "ESPN Premium — Opción 2",
         url: "https://bgfuzq.fubohd.com/espnpremium/mono.m3u8?token=087d9925d50a99d6f9e4896d60aff96f1e59aeae-cd-1778556746-1778538746",
       },
-      {
-        title: "ESPN Premium HD — Opción 3",
-        url: "https://edge-live15-hr.cvattv.com.ar/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzc4NzEyNzUxIiwic2lwIjoiMjAwLjU1LjI0NS4xNDUiLCJwYXRoIjoiL2xpdmUvYzdlZHMvRm94X1Nwb3J0c19QcmVtaXVuX0hEL1NBX0xpdmVfZGFzaF9lbmNfQy8iLCJzZXNzaW9uX2Nkbl9pZCI6Ijc1NjYzNDgxNWRjZGJmYWMiLCJzZXNzaW9uX2lkIjoiIiwiY2xpZW50X2lkIjoiIiwiZGV2aWNlX2lkIjoiIiwibWF4X3Nlc3Npb25zIjowLCJzZXNzaW9uX2R1cmF0aW9uIjowLCJ1cmwiOiJodHRwczovLzIwMS4yMzUuNjYuMTE0IiwiYXVkIjoiNTgiLCJzb3VyY2VzIjpbODUsMTQ0LDg2LDg4XX0=.2qY0hBxhvkT5U13TBk75gSHFyOtYWjdmh5XBTNhU7WPplv9UCyabdEQBiBvgA1qG0LCPwK95Cgi8f3Gf3kgnwg==/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_C/Fox_Sports_Premiun_HD.mpd",
-        behaviorHints: {
-          notWebReady: true,
-          proxyHeaders: {
-            request: {
-              Origin: "https://nebunexa.life",
-              Referer: "https://nebunexa.life/",
-              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            },
-          },
-        },
-      },
     ],
   },
 };
