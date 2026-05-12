@@ -5,19 +5,15 @@ const RENDER_URL = "https://tu-addon.onrender.com";
 const CANALES = {
   espnpremium: {
     nombre: "ESPN Premium",
-    urls: [
-      "https://nebunexa.life/cvatt.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
-      "https://la14hd.com/vivo/canales.php?stream=espnpremium",
-      "https://streamtpcloud.com/global1.php?stream=espnpremium",
-    ],
+    urls: ["https://nebunexa.life/cvatt.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1", "https://la14hd.com/vivo/canales.php?stream=espnpremium"],
   },
   tntsports: {
     nombre: "TNT Sports",
-    urls: ["https://nebunexa.life/cvatt.html?get=VE5UX1Nwb3J0c19IRA&lang=1", "https://la14hd.com/vivo/canales.php?stream=tntsports", "https://streamtpcloud.com/global1.php?stream=tntsports"],
+    urls: ["https://nebunexa.life/cvatt.html?get=VE5UX1Nwb3J0c19IRA&lang=1", "https://la14hd.com/vivo/canales.php?stream=tntsports"],
   },
   dsports: {
     nombre: "DSports",
-    urls: ["https://nebunexa.life/cvatt.html?get=RFNwb3J0c0hE&lang=1", "https://la14hd.com/vivo/canales.php?stream=dsports", "https://streamtpcloud.com/global1.php?stream=dsports"],
+    urls: ["https://nebunexa.life/cvatt.html?get=RFNwb3J0c0hE&lang=1", "https://la14hd.com/vivo/canales.php?stream=dsports"],
   },
 };
 
@@ -83,17 +79,24 @@ async function subirARender(channelId, streams) {
     return;
   }
 
-  const res = await fetch(`${RENDER_URL}/update`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ channel: channelId, streams }),
-  });
+  try {
+    const res = await fetch(`${RENDER_URL}/update`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ channel: channelId, streams }),
+    });
 
-  const data = await res.json();
-  if (res.ok) {
-    console.log(`  ✅ ${streams.length} stream(s) subidos a Render`);
-  } else {
-    console.error(`  ❌ Error: ${data.error}`);
+    const text = await res.text(); // ← texto plano primero
+    console.log(`  Render respondió: ${text}`);
+
+    const data = JSON.parse(text);
+    if (res.ok) {
+      console.log(`  ✅ ${streams.length} stream(s) subidos`);
+    } else {
+      console.error(`  ❌ Error: ${data.error}`);
+    }
+  } catch (err) {
+    console.error(`  ❌ Error al subir: ${err.message}`);
   }
 }
 
