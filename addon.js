@@ -150,27 +150,8 @@ app.post("/update", (req, res) => {
     return res.status(400).json({ error: "streams inválidos" });
   }
 
-  const streamsM3U8 = channels[channel].streams.filter((s) => !s.url.includes(".mpd"));
-
-  // Agregar behaviorHints a los streams MPD automáticamente
-  const streamsMPD = streams.map((s) => ({
-    ...s,
-    ...(s.url.includes(".mpd") && {
-      behaviorHints: {
-        notWebReady: true,
-        proxyHeaders: {
-          request: {
-            Origin: "https://nebunexa.life",
-            Referer: "https://nebunexa.life/",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-          },
-        },
-      },
-    }),
-  }));
-
-  channels[channel].streams = [...streamsM3U8, ...streamsMPD];
-  console.log(`✅ ${channel} actualizado`);
+  channels[channel].streams = streams;
+  console.log(`✅ ${channel} actualizado con ${streams.length} stream(s)`);
   return res.json({ ok: true });
 });
 
