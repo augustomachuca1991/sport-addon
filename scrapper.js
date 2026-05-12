@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-const RENDER_URL = "https://tu-addon.onrender.com";
+const RENDER_URL = "https://sport-addon.onrender.com";
 
 const CANALES = {
   espnpremium: {
