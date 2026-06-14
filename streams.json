@@ -7,15 +7,45 @@
     "streams": [
       {
         "title": "DSports — tvtvhd.com",
-        "url": "https://bgfuzq.fubo18.com/dsports/mono.m3u8?token=543ca7da81fd597960a19c9d3cbb5194ef6ecb28-e1-1781447012-1781429012"
+        "url": "https://y2fzdgxl.fubo18.com/dsports/mono.m3u8?token=e6834944f68d5ec575f66105669870ce24919ddb-55-1781449199-1781431199",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://tvtvhd.com",
+              "Referer": "https://tvtvhd.com/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
       },
       {
         "title": "DSports — la18hd.com",
-        "url": "https://y2fzdgxl.fubo18.com/dsports/mono.m3u8?token=f64d7b8cb14d38b9945e0b1760bd96726a1c82fc-aa-1781447022-1781429022"
+        "url": "https://dw5pdgvk.fubo18.com/dsports/mono.m3u8?token=ca1aa89f0dd1d43e07bc9aded7bc54906582e013-c5-1781449209-1781431209",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://la18hd.com",
+              "Referer": "https://la18hd.com/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
       },
       {
         "title": "DSports — streamtpday1.xyz",
-        "url": "https://st.streamtpday1.xyz/global/dsports/index.m3u8?token=fe4ff5d1fa3dbedfbbdd8a55599fb2effb6030ba-b3-1781474972-1781420972&ip=172.215.217.240"
+        "url": "https://sa.streamtpday1.xyz/global/dsports/index.m3u8?token=680e9eaade5f038c1901ff330c2a6ab5d3162e78-51-1781477168-1781423168&ip=52.173.237.210",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://streamtpday1.xyz",
+              "Referer": "https://streamtpday1.xyz/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
       }
     ]
   },
@@ -27,275 +57,59 @@
     "streams": [
       {
         "title": "TNT Sports — la18hd.com",
-        "url": "https://a2lja3m.fubo18.com/tntsports/mono.m3u8?token=95d64312cca0180ef9b469ec81b70b4d6a721419-8f-1781447082-1781429082"
+        "url": "https://ym9yzq.fubo18.com/tntsports/mono.m3u8?token=37d7c7be0708ca279f3cc286088c9c76e93ae038-25-1781449278-1781431278",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://la18hd.com",
+              "Referer": "https://la18hd.com/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
       },
       {
         "title": "TNT Sports — tvtvhd.com",
-        "url": "https://bmf0aw9u.fubo18.com/tntsports/mono.m3u8?token=cddc5b0b1cda8bfb1f0426b4688c1f3bb15e4cd7-6d-1781447113-1781429113"
+        "url": "https://y2fzdgxl.fubo18.com/tntsports/mono.m3u8?token=c6522f8bc8c692a52501a7a2b6cc26c6ced7332a-b1-1781449309-1781431309",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://tvtvhd.com",
+              "Referer": "https://tvtvhd.com/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
       },
       {
         "title": "TNT Sports — streamtpday1.xyz",
-        "url": "https://sa.streamtpday1.xyz/global/tntsports/index.m3u8?token=34503df4b3dbcba5b171d6703efcb7672b713846-fe-1781475022-1781421022&ip=172.215.217.240"
+        "url": "https://st.streamtpday1.xyz/global/tntsports/index.m3u8?token=5cb543d3272f1815dfca8cadba17071221b775a4-56-1781477218-1781423218&ip=52.173.237.210",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://streamtpday1.xyz",
+              "Referer": "https://streamtpday1.xyz/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
       },
       {
         "title": "TNT Sports — la14hd.com",
-        "url": "https://anvtcax.fubo18.com/tntsportschile/mono.m3u8?token=cc64f3b28eca053d94548df028598481115232fb-d2-1781447142-1781429142"
-      }
-    ]
-  },
-  "espnpremium": {
-    "name": "ESPN Premium",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espnpremium.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espnpremium.svg",
-    "description": "ESPN Premium en vivo",
-    "streams": [
-      {
-        "title": "ESPN Premium — la18hd.com",
-        "url": "https://bgvnzw5k.fubo18.com/espnpremium/mono.m3u8?token=bb71d7194040f231d79987994d4c8f6003594874-bf-1781447173-1781429173"
-      },
-      {
-        "title": "ESPN Premium — tvtvhd.com",
-        "url": "https://bmf0aw9u.fubo18.com/liga1max/mono.m3u8?token=0365a2f566a08d9c144a7381832131f83fd1270b-67-1781447206-1781429206"
-      },
-      {
-        "title": "ESPN Premium — streamtpday1.xyz",
-        "url": "https://st.streamtpday1.xyz/global/espnpremium/index.m3u8?token=0f0331fc89dae40fcf21258b0088296ceb35b829-7f-1781475127-1781421127&ip=172.215.217.240"
-      }
-    ]
-  },
-  "tycsport": {
-    "name": "TyC Sports",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
-    "description": "TyC Sports en vivo",
-    "streams": [
-      {
-        "title": "TyC Sports — la18hd.com",
-        "url": "https://rm8zcvk3.fubo18.com/tycinternacional/mono.m3u8?token=3d48943b212bfcd19c96ee2a366a8e7ae64a8095-5-1781447237-1781429237"
-      },
-      {
-        "title": "TyC Sports — tvtvhd.com",
-        "url": "https://anvtcax.fubo18.com/tycsports/mono.m3u8?token=a3b5dd2e0ee3d560dfdc86e7470fdd091f9c746c-e9-1781447272-1781429272"
-      },
-      {
-        "title": "TyC Sports — streamtpday1.xyz",
-        "url": "https://st.streamtpday1.xyz/global/tycsports/index.m3u8?token=a354a752a1c858662970b149da03728e2ff1350c-5c-1781475194-1781421194&ip=172.215.217.240"
-      }
-    ]
-  },
-  "espn": {
-    "name": "ESPN",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn.svg",
-    "description": "ESPN en vivo",
-    "streams": [
-      {
-        "title": "ESPN — tvtvhd.com",
-        "url": "https://bgvnzw5k.fubo18.com/espn/mono.m3u8?token=d8456e4d0f8df4924759185a68b6645e262bb99f-c9-1781447304-1781429304"
-      },
-      {
-        "title": "ESPN — la18hd.com",
-        "url": "https://c2f2zq.fubo18.com/espn/mono.m3u8?token=71212f6b24953984eb9632cd2bd6aa081b8d15e4-24-1781447313-1781429313"
-      },
-      {
-        "title": "ESPN — streamtpday1.xyz",
-        "url": "https://st.streamtpday1.xyz/global/espn/index.m3u8?token=d110a11338d5a32a911fdf0496b853975593b695-cf-1781475257-1781421257&ip=172.215.217.240"
-      }
-    ]
-  },
-  "espn2": {
-    "name": "ESPN 2",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn2.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn2.svg",
-    "description": "ESPN 2 en vivo",
-    "streams": [
-      {
-        "title": "ESPN 2 — tvtvhd.com",
-        "url": "https://wp9xqedt.fubo18.com/espn2/mono.m3u8?token=94cc9ce4701adb04ed7060db5655bd7cfbeff5aa-19-1781447378-1781429378"
-      },
-      {
-        "title": "ESPN 2 — la18hd.com",
-        "url": "https://b2zmawnpyww.fubo18.com/espn2/mono.m3u8?token=ce9bb631d45dcfa7580d9bc528bf31720750158e-a2-1781447387-1781429387"
-      },
-      {
-        "title": "ESPN 2 — streamtpday1.xyz",
-        "url": "https://sa.streamtpday1.xyz/global/espn2/index.m3u8?token=80e11e2491121e201b22e12f2c5df21503476c79-bc-1781475335-1781421335&ip=172.215.217.240"
-      },
-      {
-        "title": "ESPN 2 — la18hd.com",
-        "url": "https://c2nvdxq.fubo18.com/espn2MX/mono.m3u8?token=2e435625bf02726db4629513893c0592b22b8788-e6-1781447445-1781429445"
-      }
-    ]
-  },
-  "espn3": {
-    "name": "ESPN 3",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn3.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn3.svg",
-    "description": "ESPN 3 en vivo",
-    "streams": [
-      {
-        "title": "ESPN 3 — la18hd.com",
-        "url": "https://x4bnd7lq.fubo18.com/espn3/mono.m3u8?token=b6c8f29bc16e762ff58e99b1684be2f7571aa59e-f-1781447479-1781429479"
-      },
-      {
-        "title": "ESPN 3 — tvtvhd.com",
-        "url": "https://rm8zcvk3.fubo18.com/espn3/mono.m3u8?token=8fbafbb53fbd31e1d6260e3947fd8b1be782e4fe-6c-1781447513-1781429513"
-      },
-      {
-        "title": "ESPN 3 — streamtpday1.xyz",
-        "url": "https://st.streamtpday1.xyz/global/espn3/index.m3u8?token=1e016cc973a2ae977aca0c747d2425f52b50075e-6f-1781475435-1781421435&ip=172.215.217.240"
-      },
-      {
-        "title": "ESPN 3 — la14hd.com",
-        "url": "https://a2vlca.fubo18.com/espn3mx/mono.m3u8?token=d418454db666d7740075c303393b8645c37d747c-27-1781447546-1781429546"
-      }
-    ]
-  },
-  "dsports2": {
-    "name": "DSports 2",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/dsports2.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/dsports2.svg",
-    "description": "DirecTV Sports 2 en vivo",
-    "streams": [
-      {
-        "title": "DSports 2 — tvtvhd.com",
-        "url": "https://bmf0aw9u.fubo18.com/dsports2/mono.m3u8?token=381277ed347cad3b2da50e7f63e5b4f032d72078-6a-1781447581-1781429581"
-      },
-      {
-        "title": "DSports 2 — la18hd.com",
-        "url": "https://c2nvdxq.fubo18.com/dsports2/mono.m3u8?token=7c7fd84e71e8e99cc3d185f211e104fc084fe820-4d-1781447590-1781429590"
-      },
-      {
-        "title": "DSports 2 — streamtpday1.xyz",
-        "url": "https://sa.streamtpday1.xyz/global/dsports2/index.m3u8?token=1960891280ae70c5d1f9431108c359957a4de24a-fe-1781475523-1781421523&ip=172.215.217.240"
-      }
-    ]
-  },
-  "foxsports": {
-    "name": "Fox Sports",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports.svg",
-    "description": "Fox Sports en vivo",
-    "streams": [
-      {
-        "title": "Fox Sports — la18hd.com",
-        "url": "https://tyg2mnl9.fubo18.com/foxsports/mono.m3u8?token=62924c7630dc52b62fdf86345628ebdb2907ba44-f6-1781447646-1781429646"
-      },
-      {
-        "title": "Fox Sports — tvtvhd.com",
-        "url": "https://tyg2mnl9.fubo18.com/foxsports/mono.m3u8?token=0c4a4b3940ffaf07ec3243e00d52c7bc97ee183e-c-1781447682-1781429682"
-      },
-      {
-        "title": "Fox Sports — streamtpday1.xyz",
-        "url": "https://sa.streamtpday1.xyz/global/fox1ar/index.m3u8?token=4c74febdcb0dbaa002f197d714b3cf147acbe220-d4-1781475602-1781421602&ip=172.215.217.240"
-      },
-      {
-        "title": "Fox Sports — la18hd.com",
-        "url": "https://anvtcax.fubo18.com/foxsportsmx/mono.m3u8?token=bc375438daade86d4966b8ace5ce2df8c8c3cab7-f5-1781447712-1781429712"
-      }
-    ]
-  },
-  "foxsports2": {
-    "name": "Fox Sports 2",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports2.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports2.svg",
-    "description": "Fox Sports 2 en vivo",
-    "streams": [
-      {
-        "title": "Fox Sports 2 — la18hd.com",
-        "url": "https://qzv4jmsc.fubo18.com/foxsports2/mono.m3u8?token=413f9569085aee9edd8196d1e2c998c74a0cea9d-a9-1781447746-1781429746"
-      },
-      {
-        "title": "Fox Sports 2 — tvtvhd.com",
-        "url": "https://a2vlca.fubo18.com/foxsports2/mono.m3u8?token=0fe7e68cb6d9622b804a6dc0aa358018d6a974cd-3f-1781447780-1781429780"
-      },
-      {
-        "title": "Fox Sports 2 — streamtpday1.xyz",
-        "url": "https://st.streamtpday1.xyz/global/fox2ar/index.m3u8?token=48223d463c78242da4f68504bad5c135afafe2c3-dc-1781475701-1781421701&ip=172.215.217.240"
-      },
-      {
-        "title": "Fox Sports 2 — la18hd.com",
-        "url": "https://ewvz.fubo18.com/foxsports2mx/mono.m3u8?token=9330a4125954358f95829267e00dbfc83adf9b9d-8e-1781447811-1781429811"
-      }
-    ]
-  },
-  "foxsports3": {
-    "name": "Fox Sports 3",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports3.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports3.svg",
-    "description": "Fox Sports 3 en vivo",
-    "streams": [
-      {
-        "title": "Fox Sports 3 — la14hd.com",
-        "url": "https://bmf0aw9u.fubo18.com/foxsports3/mono.m3u8?token=0be778b941ab16b9d49394e338666e0e41d41b32-68-1781447846-1781429846"
-      },
-      {
-        "title": "Fox Sports 3 — tvtvhd.com",
-        "url": "https://bgvnzw5k.fubo18.com/foxsports3/mono.m3u8?token=e5372f80219521fa9bc28687b35fa88f2cfb974e-db-1781447879-1781429879"
-      },
-      {
-        "title": "Fox Sports 3 — la14hd.com",
-        "url": "https://ym9yzq.fubo18.com/foxsports3mx/mono.m3u8?token=a115e3bba5d188231027d2829c016a0ef4079010-43-1781447899-1781429899"
-      }
-    ]
-  },
-  "tudn": {
-    "name": "TUDN",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tudn.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tudn.svg",
-    "description": "TUDN en vivo",
-    "streams": [
-      {
-        "title": "TUDN — la18hd.com",
-        "url": "https://qzv4jmsc.fubo18.com/tudn/mono.m3u8?token=289d813a514a197d5f9e6c843d6a4bcd2eca837d-df-1781447934-1781429934"
-      },
-      {
-        "title": "TUDN — tvtvhd.com",
-        "url": "https://c2nvdxq.fubo18.com/tudn/mono.m3u8?token=dde89333270730cd6c3acaf561a80b8679ee2f93-47-1781447970-1781429970"
-      },
-      {
-        "title": "TUDN — tvtvhd.com",
-        "url": "https://dw5pdgvk.fubo18.com/tudn_mx/mono.m3u8?token=9ed9154d635f303ce3477a68862bb6fbd9f1e429-f0-1781447989-1781429989"
-      }
-    ]
-  },
-  "winsport": {
-    "name": "Win Sports+",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/winsport.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/winsport.svg",
-    "description": "Win Sports+ en vivo",
-    "streams": [
-      {
-        "title": "Win Sports+ — tvtvhd.com",
-        "url": "https://tyg2mnl9.fubo18.com/winsportsplus/mono.m3u8?token=fce62dd1771b3713063f2ae5799af8f0e61b14ef-7-1781447999-1781429999"
-      },
-      {
-        "title": "Win Sports+ — la14hd.com",
-        "url": "https://b2zmawnpyww.fubo18.com/winsportsplus/mono.m3u8?token=d19b5feeb2f891dc9dfad20efc4b6d8b95f94d3a-2f-1781448008-1781430008"
-      },
-      {
-        "title": "Win Sports+ — streamtpday1.xyz",
-        "url": "https://sa.streamtpday1.xyz/global/winsports/index.m3u8?token=3a83bfbe4f32b795743a704e537deec236b9f857-61-1781475955-1781421955&ip=172.215.217.240"
-      }
-    ]
-  },
-  "telefe": {
-    "name": "Telefe",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/telefe.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/telefe.svg",
-    "description": "Telefe en vivo",
-    "streams": [
-      {
-        "title": "Telefe — tvtvhd.com",
-        "url": "https://yxdlc29tzq.fubo18.com/telefe/mono.m3u8?token=2f92878587de4a0346859f2cd22158ffe3d8aa22-2-1781448065-1781430065"
-      },
-      {
-        "title": "Telefe — streamtpday1.xyz",
-        "url": "https://st.streamtpday1.xyz/global/telefe/index.m3u8?token=263ec9cac359e2633b33c32c7a64af7bf8e70893-33-1781475974-1781421974&ip=172.215.217.240"
-      },
-      {
-        "title": "Telefe — la18hd.com",
-        "url": "https://a2vlca.fubo18.com/telefe/mono.m3u8?token=ec4d3bd0fa6c4d84d6068e63a13b02aa0f7287ca-69-1781448097-1781430097"
+        "url": "https://aw1wcm92zq.fubo18.com/tntsportschile/mono.m3u8?token=fb37c206f7a98b2e629152b098d4a55a7d0c5e21-9b-1781449338-1781431338",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://la14hd.com",
+              "Referer": "https://la14hd.com/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
       }
     ]
   }
