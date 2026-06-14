@@ -1,6 +1,7 @@
 const { addonBuilder } = require("stremio-addon-sdk");
 const express = require("express");
 const path = require("path");
+const sharp = require("sharp");
 
 const PORT = process.env.PORT || 7000;
 
@@ -121,6 +122,53 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use("/poster", express.static(path.join(__dirname, "static", "poster"), { maxAge: "7d" }));
+
+app.get(["/poster/:id", "/poster/:id.webp"], async (req, res) => {
+  const id = req.params.id;
+  const ch = channels[id];
+  if (!ch) return res.status(404).end();
+
+  const logo = ch.logo?.startsWith("//") ? "https:" + ch.logo : ch.logo || "";
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="450" fill="url(#bg)" rx="8"/>
+  <text x="150" y="380" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="18" font-weight="bold">${ch.name}</text>
+</svg>`;
+
+  try {
+    const fondo = await sharp(Buffer.from(svg)).png().toBuffer();
+
+    let poster;
+    if (logo) {
+      const logoResp = await fetch(logo);
+      if (logoResp.ok) {
+        const logoBuf = Buffer.from(await logoResp.arrayBuffer());
+        const logoRedim = await sharp(logoBuf)
+          .resize(220, 220, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+          .png()
+          .toBuffer();
+        poster = await sharp(fondo).composite([{ input: logoRedim, top: 90, left: 40 }]).webp().toBuffer();
+      }
+    }
+
+    if (!poster) {
+      poster = await sharp(fondo).webp().toBuffer();
+    }
+
+    res.setHeader("Content-Type", "image/webp");
+    res.setHeader("Cache-Control", "public, max-age=86400");
+    res.send(poster);
+  } catch (err) {
+    console.error("Error generating poster:", err);
+    res.status(500).end();
+  }
+});
 
 app.post("/update", (req, res) => {
   const { channel, streams } = req.body;

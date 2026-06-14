@@ -29,20 +29,35 @@ async function main() {
     </linearGradient>
   </defs>
   <rect width="300" height="450" fill="url(#bg)" rx="8"/>
-  <image href="${ch.logo}" x="40" y="90" width="220" height="220" preserveAspectRatio="xMidYMid meet"/>
   <text x="150" y="380" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="18" font-weight="bold">${ch.name}</text>
 </svg>`;
 
     try {
-      const buf = await sharp(Buffer.from(svg)).webp().toBuffer();
       const fs = require("fs");
-      fs.writeFileSync(`static/poster/${ch.id}.webp`, buf);
-      console.log(`✅ ${ch.id}.webp (${buf.length} bytes)`);
+
+      const fondo = await sharp(Buffer.from(svg)).png().toBuffer();
+
+      const logoResp = await fetch(ch.logo);
+      if (!logoResp.ok) throw new Error(`fetch ${ch.logo} → ${logoResp.status}`);
+      const logoBuf = Buffer.from(await logoResp.arrayBuffer());
+
+      const logoRedim = await sharp(logoBuf)
+        .resize(220, 220, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+        .png()
+        .toBuffer();
+
+      const poster = await sharp(fondo)
+        .composite([{ input: logoRedim, top: 90, left: 40 }])
+        .webp()
+        .toBuffer();
+
+      fs.writeFileSync(`static/poster/${ch.id}.webp`, poster);
+      console.log(`✅ ${ch.id}.webp (${poster.length} bytes)`);
     } catch (e) {
       console.error(`❌ ${ch.id}: ${e.message}`);
     }
   }
-  console.log("\\n🎉 Todos los posters generados en static/poster/");
+  console.log("\n🎉 Todos los posters generados en static/poster/");
 }
 
 main();
