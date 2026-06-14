@@ -2,27 +2,27 @@
   "streams": [
     {
       "title": "TNT Sports — futbol-libres",
-      "url": "https://liqcy.vivolatamz.org:443/lb03/tntsports/index.m3u8?token=190f1e03a2e4c5c88767b2e10c019802a5e01cd9-a2-1781481858-1781427858&ip=200.55.245.145",
+      "url": "https://rbtih.vivolatamz.org:443/lb05/tntsports/index.m3u8?token=e39bd15c9db77cbe5685392f0b15d0abdf0c1967-d2-1781482084-1781428084&ip=20.62.204.22",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://liqcy.vivolatamz.org",
-            "Referer": "https://liqcy.vivolatamz.org/",
+            "Origin": "https://rbtih.vivolatamz.org",
+            "Referer": "https://rbtih.vivolatamz.org/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "TNT Sports — rm8zcvk3.fubo18.com",
-      "url": "https://rm8zcvk3.fubo18.com:443/tntsports/mono.m3u8?token=048c7c73e8da299c2208a1875c4fc71ac1c47524-71-1781453966-1781435966",
+      "title": "TNT Sports — bgfuzq.fubo18.com",
+      "url": "https://bGFuZQ.fubo18.com:443/tntsports/mono.m3u8?token=6b433de6ea9499f0ce8f41bdf75788e1689f4904-ee-1781454191-1781436191",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://rm8zcvk3.fubo18.com",
-            "Referer": "https://rm8zcvk3.fubo18.com/",
+            "Origin": "https://bgfuzq.fubo18.com",
+            "Referer": "https://bgfuzq.fubo18.com/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
@@ -30,7 +30,7 @@
     },
     {
       "title": "TNT Sports — st.streamtpday1.xyz",
-      "url": "https://st.streamtpday1.xyz:443/global/tntsports/index.m3u8?token=d710ce29cbc063fa4946d582a00961fe080746b0-e0-1781481868-1781427868&ip=200.55.245.145",
+      "url": "https://st.streamtpday1.xyz:443/global/tntsports/index.m3u8?token=ea4be08bbafba6f7fa7fbeeb00b45297e6441ab6-c6-1781482091-1781428091&ip=20.62.204.22",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {

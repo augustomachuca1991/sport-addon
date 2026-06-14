@@ -2,27 +2,27 @@
   "streams": [
     {
       "title": "TyC Sports — futbol-libres",
-      "url": "https://bdjky.vivolatamz.org:443/lb01/tycsports/index.m3u8?token=bf91908b5272c1fa0ae44e3b1d849a48153cc081-43-1781481866-1781427866&ip=200.55.245.145",
+      "url": "https://vmkqp.vivolatamz.org:443/lb06/tycsports/index.m3u8?token=af6cf1a3a60abf0fbb33cb8073142750b6080c6f-f3-1781482087-1781428087&ip=20.62.204.22",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://bdjky.vivolatamz.org",
-            "Referer": "https://bdjky.vivolatamz.org/",
+            "Origin": "https://vmkqp.vivolatamz.org",
+            "Referer": "https://vmkqp.vivolatamz.org/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "TyC Sports — am91cm5leq.fubo18.com",
-      "url": "https://am91cm5leQ.fubo18.com:443/tycsports/mono.m3u8?token=8de5638c0c28715f01ce6bf6bee5ca88c78208a4-53-1781453975-1781435975",
+      "title": "TyC Sports — a2lja3m.fubo18.com",
+      "url": "https://a2lja3m.fubo18.com:443/tycsports/mono.m3u8?token=6c02302c3214569343f17fd3c5cc2cb1057cc32b-24-1781454193-1781436193",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://am91cm5leq.fubo18.com",
-            "Referer": "https://am91cm5leq.fubo18.com/",
+            "Origin": "https://a2lja3m.fubo18.com",
+            "Referer": "https://a2lja3m.fubo18.com/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
@@ -30,7 +30,7 @@
     },
     {
       "title": "TyC Sports — sa.streamtpday1.xyz",
-      "url": "https://sa.streamtpday1.xyz:443/global/tycsports/index.m3u8?token=7be1b0e50cbe5a985788339c4edf6cafbe5fc6e3-b2-1781481877-1781427877&ip=200.55.245.145",
+      "url": "https://sa.streamtpday1.xyz:443/global/tycsports/index.m3u8?token=56febebed0592cdbbe60cd6099249550dc55fc27-64-1781482094-1781428094&ip=20.62.204.22",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
