@@ -7,13 +7,13 @@
     "streams": [
       {
         "title": "DSports — la18hd",
-        "url": "https://ag9wzq.fubo18.com:443/dsports/mono.m3u8?token=6ef3b0313b29dd8a80d8e41f3ff5d4465bf0620e-db-1781455845-1781437845",
+        "url": "https://rm8zcvk3.fubo18.com:443/dsports/mono.m3u8?token=a81d9379acb58bd933eeacfe16030659da6a5612-78-1781456340-1781438340",
         "behaviorHints": {
           "notWebReady": true,
           "proxyHeaders": {
             "request": {
-              "Origin": "https://ag9wzq.fubo18.com",
-              "Referer": "https://ag9wzq.fubo18.com/",
+              "Origin": "https://rm8zcvk3.fubo18.com",
+              "Referer": "https://rm8zcvk3.fubo18.com/",
               "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
             }
           }
@@ -21,13 +21,13 @@
       },
       {
         "title": "DSports — latamvidz",
-        "url": "https://kbnue.vivolatamz.org:443/lb03/dsports/index.m3u8?token=d9123481bfb71fb1c0233e9a66d99bdb736d2920-14-1781483741-1781429741&ip=200.55.245.145",
+        "url": "https://qxjes.vivolatamz.org:443/lb05/dsports/index.m3u8?token=6ad09fd574e9e50a792f383864072aa3b69a25a7-5b-1781484235-1781430235&ip=40.116.93.49",
         "behaviorHints": {
           "notWebReady": true,
           "proxyHeaders": {
             "request": {
-              "Origin": "https://kbnue.vivolatamz.org",
-              "Referer": "https://kbnue.vivolatamz.org/",
+              "Origin": "https://qxjes.vivolatamz.org",
+              "Referer": "https://qxjes.vivolatamz.org/",
               "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
             }
           }
@@ -43,7 +43,43 @@
     "streams": [
       {
         "title": "TNT Sports — la18hd",
-        "url": "https://eWVz.fubo18.com:443/tntsports/mono.m3u8?token=fe37883c6898694c2f33bf8ffb514d622719c71e-ff-1781455849-1781437849",
+        "url": "https://a2lja3m.fubo18.com:443/tntsports/mono.m3u8?token=d55955b7392be0e1515dbc60a26568146fc7553d-6a-1781456342-1781438342",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://a2lja3m.fubo18.com",
+              "Referer": "https://a2lja3m.fubo18.com/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
+      },
+      {
+        "title": "TNT Sports — latamvidz",
+        "url": "https://ovaut.vivolatamz.org:443/lb04/tntsports/index.m3u8?token=755cdc3e3ec6d114bb933fa46f6ab1d2a504e674-aa-1781484237-1781430237&ip=40.116.93.49",
+        "behaviorHints": {
+          "notWebReady": true,
+          "proxyHeaders": {
+            "request": {
+              "Origin": "https://ovaut.vivolatamz.org",
+              "Referer": "https://ovaut.vivolatamz.org/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "espnpremium": {
+    "name": "ESPN Premium",
+    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espnpremium.svg",
+    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espnpremium.svg",
+    "description": "ESPN Premium en vivo",
+    "streams": [
+      {
+        "title": "ESPN Premium — la18hd",
+        "url": "https://eWVz.fubo18.com:443/espnpremium/mono.m3u8?token=e138f98ccfcff7f28acfb5105111933baa71499f-d4-1781456344-1781438344",
         "behaviorHints": {
           "notWebReady": true,
           "proxyHeaders": {
@@ -56,44 +92,8 @@
         }
       },
       {
-        "title": "TNT Sports — latamvidz",
-        "url": "https://vmkqp.vivolatamz.org:443/lb06/tntsports/index.m3u8?token=721805f008c9a8fec94e90bbcd6b31cd2f0b7865-bc-1781483745-1781429745&ip=200.55.245.145",
-        "behaviorHints": {
-          "notWebReady": true,
-          "proxyHeaders": {
-            "request": {
-              "Origin": "https://vmkqp.vivolatamz.org",
-              "Referer": "https://vmkqp.vivolatamz.org/",
-              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-            }
-          }
-        }
-      }
-    ]
-  },
-  "tycsport": {
-    "name": "TyC Sports",
-    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
-    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
-    "description": "TyC Sports en vivo",
-    "streams": [
-      {
-        "title": "TyC Sports — la18hd",
-        "url": "https://c2nvdxq.fubo18.com:443/tycsports/mono.m3u8?token=157c803af9daef0af0bf21af67c53d0cb48f0839-e6-1781455853-1781437853",
-        "behaviorHints": {
-          "notWebReady": true,
-          "proxyHeaders": {
-            "request": {
-              "Origin": "https://c2nvdxq.fubo18.com",
-              "Referer": "https://c2nvdxq.fubo18.com/",
-              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-            }
-          }
-        }
-      },
-      {
-        "title": "TyC Sports — latamvidz",
-        "url": "https://jwzrh.vivolatamz.org:443/lb03/tycsports/index.m3u8?token=c8ff4f75ed4a5060a7f4f98747295b42112eb869-f5-1781483749-1781429749&ip=200.55.245.145",
+        "title": "ESPN Premium — latamvidz",
+        "url": "https://jwzrh.vivolatamz.org:443/lb03/espnpremium/index.m3u8?token=8398e4ae47564c1c498bb825ca3e18a7e65cbaa7-8d-1781484239-1781430239&ip=40.116.93.49",
         "behaviorHints": {
           "notWebReady": true,
           "proxyHeaders": {

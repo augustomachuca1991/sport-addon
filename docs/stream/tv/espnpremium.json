@@ -1,22 +1,22 @@
 {
   "streams": [
     {
-      "title": "TyC Sports — la18hd",
-      "url": "https://c2nvdxq.fubo18.com:443/tycsports/mono.m3u8?token=157c803af9daef0af0bf21af67c53d0cb48f0839-e6-1781455853-1781437853",
+      "title": "ESPN Premium — la18hd",
+      "url": "https://eWVz.fubo18.com:443/espnpremium/mono.m3u8?token=e138f98ccfcff7f28acfb5105111933baa71499f-d4-1781456344-1781438344",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://c2nvdxq.fubo18.com",
-            "Referer": "https://c2nvdxq.fubo18.com/",
+            "Origin": "https://ewvz.fubo18.com",
+            "Referer": "https://ewvz.fubo18.com/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "TyC Sports — latamvidz",
-      "url": "https://jwzrh.vivolatamz.org:443/lb03/tycsports/index.m3u8?token=c8ff4f75ed4a5060a7f4f98747295b42112eb869-f5-1781483749-1781429749&ip=200.55.245.145",
+      "title": "ESPN Premium — latamvidz",
+      "url": "https://jwzrh.vivolatamz.org:443/lb03/espnpremium/index.m3u8?token=8398e4ae47564c1c498bb825ca3e18a7e65cbaa7-8d-1781484239-1781430239&ip=40.116.93.49",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {

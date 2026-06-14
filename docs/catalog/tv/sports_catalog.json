@@ -17,12 +17,12 @@
       "description": "TNT Sports en vivo"
     },
     {
-      "id": "tycsport",
+      "id": "espnpremium",
       "type": "tv",
-      "name": "TyC Sports",
-      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
-      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
-      "description": "TyC Sports en vivo"
+      "name": "ESPN Premium",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espnpremium.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espnpremium.svg",
+      "description": "ESPN Premium en vivo"
     }
   ]
 }
