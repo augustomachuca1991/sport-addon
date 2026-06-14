@@ -1,16 +1,3 @@
 {
-  "streams": [
-    {
-      "title": "ESPN — tvtvhd.com",
-      "url": "https://c2f2zq.fubo18.com/espn/mono.m3u8?token=3ed8a75732ccdf4ca02b8c84651626a7e9387301-3e-1781444287-1781426287"
-    },
-    {
-      "title": "ESPN — la18hd.com",
-      "url": "https://bgvnzw5k.fubo18.com/espn/mono.m3u8?token=e4006b8b16d0fc6b235b489d33f6fd12b5668ecc-9f-1781444296-1781426296"
-    },
-    {
-      "title": "ESPN — streamtpday1.xyz",
-      "url": "https://st.streamtpday1.xyz/global/espn/index.m3u8?token=78f33db9712803bf364d977dd34b6b113e5fc8ae-0c-1781472238-1781418238&ip=20.102.102.69"
-    }
-  ]
+  "streams": []
 }

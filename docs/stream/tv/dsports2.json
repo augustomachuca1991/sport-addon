@@ -1,16 +1,3 @@
 {
-  "streams": [
-    {
-      "title": "DSports 2 — tvtvhd.com",
-      "url": "https://y2fzdgxl.fubo18.com/dsports2/mono.m3u8?token=a24eef20c91e79812cd2e9c2ec24870f1385dd51-a7-1781444541-1781426541"
-    },
-    {
-      "title": "DSports 2 — la18hd.com",
-      "url": "https://c2f2zq.fubo18.com/dsports2/mono.m3u8?token=5700740d0cf2b4fa324d85c639993daedf24333d-3f-1781444550-1781426550"
-    },
-    {
-      "title": "DSports 2 — streamtpday1.xyz",
-      "url": "https://st.streamtpday1.xyz/global/dsports2/index.m3u8?token=f75ac2d13db3f68a1ccfb5ebc8705420a01387ce-8a-1781472482-1781418482&ip=20.102.102.69"
-    }
-  ]
+  "streams": []
 }

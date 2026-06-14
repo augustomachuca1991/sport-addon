@@ -4,112 +4,112 @@
       "id": "dsports",
       "type": "tv",
       "name": "DSports",
-      "poster": "https://imgs.search.brave.com/ZkIS7DI98QxJd0-A9f1zMs9X83l-7gYScPztHxYMfOk/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2xv/Z29wZWRpYS9pbWFn/ZXMvMS8xNS9EaXJl/Y1RWU3BvcnRzMjAx/OC5wbmcvcmV2aXNp/b24vbGF0ZXN0L3Nt/YXJ0L3dpZHRoLzE2/MC9oZWlnaHQvMTIw/P2NiPTIwMTgwMzAx/MjMzODA0",
-      "logo": "https://bestleague.world/img/dsportsplus.webp",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/dsports.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/dsports.svg",
       "description": "DirecTV Sports en vivo"
     },
     {
       "id": "tntsports",
       "type": "tv",
       "name": "TNT Sports",
-      "poster": "https://imgs.search.brave.com/bVoS1l-fg9Smd76bBVrKdAy07e5_9cgNhYaE4vN2_BA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9MNVFkSzZwWmVI/c2U5THo5dUc1cDdo/SjFCTWRFX3VxSU1N/N1dTeEJLVlJCaTgz/ZFRIdlVOT1lQSjRG/SWczNlpTeXBJPXcy/NDAtaDQ4MC1ydw",
-      "logo": "https://assets.tntsports.com.ar/__export/1717073602419/sites/tntsports/arte/logo_header_blanco_20240530.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tntsports.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tntsports.svg",
       "description": "TNT Sports en vivo"
     },
     {
       "id": "espnpremium",
       "type": "tv",
       "name": "ESPN Premium",
-      "poster": "https://angulismo-pics.pages.dev/espn-premium.png",
-      "logo": "https://imgs.search.brave.com/BoO3XQfLmGrGe7PEeBxPtiJC-pAhy_PM-BQvFg544rY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2ExL0VT/UE5fUHJlbWl1bV9s/b2dvLnN2Zy8yNTBw/eC1FU1BOX1ByZW1p/dW1fbG9nby5zdmcu/cG5n",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espnpremium.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espnpremium.svg",
       "description": "ESPN Premium en vivo"
     },
     {
       "id": "tycsport",
       "type": "tv",
       "name": "TyC Sports",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/TyC_Sports_logo.svg/512px-TyC_Sports_logo.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/60/TyC_Sports_logo.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
       "description": "TyC Sports en vivo"
     },
     {
       "id": "espn",
       "type": "tv",
       "name": "ESPN",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/512px-ESPN_wordmark.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/ESPN_wordmark.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn.svg",
       "description": "ESPN en vivo"
     },
     {
       "id": "espn2",
       "type": "tv",
       "name": "ESPN 2",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/ESPN2_logo.svg/512px-ESPN2_logo.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e2/ESPN2_logo.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn2.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn2.svg",
       "description": "ESPN 2 en vivo"
     },
     {
       "id": "espn3",
       "type": "tv",
       "name": "ESPN 3",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ESPN3_logo.svg/512px-ESPN3_logo.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/9/93/ESPN3_logo.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn3.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn3.svg",
       "description": "ESPN 3 en vivo"
     },
     {
       "id": "dsports2",
       "type": "tv",
       "name": "DSports 2",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/DIRECTV_Sports_2_Latin_America_%282018%29.svg/512px-DIRECTV_Sports_2_Latin_America_%282018%29.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4c/DIRECTV_Sports_2_Latin_America_%282018%29.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/dsports2.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/dsports2.svg",
       "description": "DirecTV Sports 2 en vivo"
     },
     {
       "id": "foxsports",
       "type": "tv",
       "name": "Fox Sports",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Fox_Sports_wordmark_logo.svg/512px-Fox_Sports_wordmark_logo.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Fox_Sports_wordmark_logo.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports.svg",
       "description": "Fox Sports en vivo"
     },
     {
       "id": "foxsports2",
       "type": "tv",
       "name": "Fox Sports 2",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Fox_Sports_2_Argentina_2023.svg/512px-Fox_Sports_2_Argentina_2023.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Fox_Sports_2_Argentina_2023.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports2.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports2.svg",
       "description": "Fox Sports 2 en vivo"
     },
     {
       "id": "foxsports3",
       "type": "tv",
       "name": "Fox Sports 3",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Fox_Sports_3_Argentina_2023.svg/512px-Fox_Sports_3_Argentina_2023.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Fox_Sports_3_Argentina_2023.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports3.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports3.svg",
       "description": "Fox Sports 3 en vivo"
     },
     {
       "id": "tudn",
       "type": "tv",
       "name": "TUDN",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/TUDN_Logo.svg/512px-TUDN_Logo.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/TUDN_Logo.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tudn.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tudn.svg",
       "description": "TUDN en vivo"
     },
     {
       "id": "winsport",
       "type": "tv",
       "name": "Win Sports+",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Win_Sports_nuevo_logo.svg/512px-Win_Sports_nuevo_logo.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Win_Sports_nuevo_logo.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/winsport.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/winsport.svg",
       "description": "Win Sports+ en vivo"
     },
     {
       "id": "telefe",
       "type": "tv",
       "name": "Telefe",
-      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Telefe-Logo.svg/512px-Telefe-Logo.svg.png",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Telefe-Logo.svg",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/telefe.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/telefe.svg",
       "description": "Telefe en vivo"
     }
   ]

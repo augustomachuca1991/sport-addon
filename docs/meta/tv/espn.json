@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "id": "espn",
+    "type": "tv",
+    "name": "ESPN",
+    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn.svg",
+    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/espn.svg",
+    "description": "ESPN en vivo"
+  }
+}

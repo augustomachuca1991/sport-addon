@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "id": "foxsports3",
+    "type": "tv",
+    "name": "Fox Sports 3",
+    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports3.svg",
+    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports3.svg",
+    "description": "Fox Sports 3 en vivo"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "id": "foxsports2",
+    "type": "tv",
+    "name": "Fox Sports 2",
+    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports2.svg",
+    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports2.svg",
+    "description": "Fox Sports 2 en vivo"
+  }
+}

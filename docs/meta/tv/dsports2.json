@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "id": "dsports2",
+    "type": "tv",
+    "name": "DSports 2",
+    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/dsports2.svg",
+    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/dsports2.svg",
+    "description": "DirecTV Sports 2 en vivo"
+  }
+}

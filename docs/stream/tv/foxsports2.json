@@ -1,20 +1,3 @@
 {
-  "streams": [
-    {
-      "title": "Fox Sports 2 — la18hd.com",
-      "url": "https://tyg2mnl9.fubo18.com/foxsports2/mono.m3u8?token=4855a39c437c5f997d966d0d82f6b4c54645e18f-33-1781444694-1781426694"
-    },
-    {
-      "title": "Fox Sports 2 — tvtvhd.com",
-      "url": "https://bgvnzw5k.fubo18.com/foxsports2/mono.m3u8?token=2a17cad1d81c4ccf8d78f72d61f663a014d8f8fe-80-1781444725-1781426725"
-    },
-    {
-      "title": "Fox Sports 2 — streamtpday1.xyz",
-      "url": "https://st.streamtpday1.xyz/global/fox2ar/index.m3u8?token=8ef0e7fefb38feb9f0ac5dc19c27da550861c098-2c-1781472645-1781418645&ip=20.102.102.69"
-    },
-    {
-      "title": "Fox Sports 2 — la18hd.com",
-      "url": "https://a2lja3m.fubo18.com/foxsports2mx/mono.m3u8?token=7270e2ac6e0c55120aff42b1583317264c939426-85-1781444754-1781426754"
-    }
-  ]
+  "streams": []
 }

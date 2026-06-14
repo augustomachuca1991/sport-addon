@@ -1,16 +1,3 @@
 {
-  "streams": [
-    {
-      "title": "Telefe — tvtvhd.com",
-      "url": "https://qzv4jmsc.fubo18.com/telefe/mono.m3u8?token=4acf36f4da64c86d250270026b3c3b69b27d65c4-21-1781444991-1781426991"
-    },
-    {
-      "title": "Telefe — streamtpday1.xyz",
-      "url": "https://sa.streamtpday1.xyz/global/telefe/index.m3u8?token=e491901bdeb53ce31b57c8140421507b135b1b94-a8-1781472900-1781418900&ip=20.102.102.69"
-    },
-    {
-      "title": "Telefe — la18hd.com",
-      "url": "https://c2f2zq.fubo18.com/telefe/mono.m3u8?token=51b625c2c7ef101d916848ba645b4469d86d0b67-94-1781445021-1781427021"
-    }
-  ]
+  "streams": []
 }

@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "id": "foxsports",
+    "type": "tv",
+    "name": "Fox Sports",
+    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports.svg",
+    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/foxsports.svg",
+    "description": "Fox Sports en vivo"
+  }
+}

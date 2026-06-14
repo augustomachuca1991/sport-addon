@@ -1,16 +1,3 @@
 {
-  "streams": [
-    {
-      "title": "TUDN — la18hd.com",
-      "url": "https://bgvnzw5k.fubo18.com/tudn/mono.m3u8?token=b2e0bd31347471d5915d660fb17e848766cb51a6-61-1781444868-1781426868"
-    },
-    {
-      "title": "TUDN — tvtvhd.com",
-      "url": "https://y2fzdgxl.fubo18.com/tudn/mono.m3u8?token=64bf60cdf8530a321fd35336bc7ad6e731939172-94-1781444900-1781426900"
-    },
-    {
-      "title": "TUDN — tvtvhd.com",
-      "url": "https://yxdlc29tzq.fubo18.com/tudn_mx/mono.m3u8?token=6f807cc984a7af3eedf8fecb96ded660a7369063-6c-1781444921-1781426921"
-    }
-  ]
+  "streams": []
 }

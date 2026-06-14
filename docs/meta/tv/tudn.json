@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "id": "tudn",
+    "type": "tv",
+    "name": "TUDN",
+    "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tudn.svg",
+    "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tudn.svg",
+    "description": "TUDN en vivo"
+  }
+}

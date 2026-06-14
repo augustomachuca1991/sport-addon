@@ -6,17 +6,12 @@
   <script>
     var path = window.location.pathname;
     var jsonPaths = ['/manifest.json', '/catalog/', '/stream/', '/meta/'];
-    var isJsonPath = jsonPaths.some(function(p) { return path.indexOf(p) === 0; });
+    var isJsonPath = jsonPaths.some(function(p) { return path.includes(p); });
     if (isJsonPath) {
-      fetch('.' + path)
-        .then(function(r) { return r.text(); })
-        .then(function(d) {
-          document.body.textContent = d;
-          document.contentType = 'application/json';
-        });
+      document.body.textContent = JSON.stringify({ streams: [] });
     } else {
       document.title = 'Sports Addon';
-      document.body.innerHTML = '<h1>Sports Addon</h1><p>Agregá esta URL en Stremio:</p><pre>' + window.location.origin + '/manifest.json</pre>';
+      document.body.innerHTML = '<h1>Sports Addon</h1><p>Agregá esta URL en Stremio:</p><pre>' + window.location.origin + '/sport-addon/manifest.json</pre>';
     }
   </script>
 </head>
