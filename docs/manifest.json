@@ -1,0 +1,37 @@
+{
+  "id": "org.local.sports.autoquality",
+  "version": "1.2.0",
+  "name": "Sports Auto Quality",
+  "description": "Canales deportivos en vivo",
+  "resources": [
+    "catalog",
+    "meta",
+    "stream"
+  ],
+  "types": [
+    "tv"
+  ],
+  "idPrefixes": [
+    "dsports",
+    "tntsports",
+    "espnpremium",
+    "tycsport",
+    "espn",
+    "espn2",
+    "espn3",
+    "dsports2",
+    "foxsports",
+    "foxsports2",
+    "foxsports3",
+    "tudn",
+    "winsport",
+    "telefe"
+  ],
+  "catalogs": [
+    {
+      "type": "tv",
+      "id": "sports_catalog",
+      "name": "Sports"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "streams": [
+    {
+      "title": "ESPN Premium — la18hd.com",
+      "url": "https://yxdlc29tzq.fubo18.com/espnpremium/mono.m3u8?token=c11d8bb5c7250fc44652b21554a9b3cd732b5174-63-1781444161-1781426161"
+    },
+    {
+      "title": "ESPN Premium — tvtvhd.com",
+      "url": "https://aw1wcm92zq.fubo18.com/liga1max/mono.m3u8?token=eaa6435280fa47c10ea4abecde1c3948e23d5357-9c-1781444192-1781426192"
+    },
+    {
+      "title": "ESPN Premium — streamtpday1.xyz",
+      "url": "https://st.streamtpday1.xyz/global/espnpremium/index.m3u8?token=88de9b926ec03135eb38e534fff1947a1f9b1be1-db-1781472114-1781418114&ip=20.102.102.69"
+    }
+  ]
+}
