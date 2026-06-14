@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sports Addon</title>
+  <script>
+    var path = window.location.pathname;
+    var jsonPaths = ['/manifest.json', '/catalog/', '/stream/', '/meta/'];
+    var isJsonPath = jsonPaths.some(function(p) { return path.indexOf(p) === 0; });
+    if (isJsonPath) {
+      fetch('.' + path)
+        .then(function(r) { return r.text(); })
+        .then(function(d) {
+          document.body.textContent = d;
+          document.contentType = 'application/json';
+        });
+    } else {
+      document.title = 'Sports Addon';
+      document.body.innerHTML = '<h1>Sports Addon</h1><p>Agregá esta URL en Stremio:</p><pre>' + window.location.origin + '/manifest.json</pre>';
+    }
+  </script>
+</head>
+<body></body>
+</html>

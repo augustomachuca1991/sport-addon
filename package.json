@@ -2,17 +2,22 @@
   "name": "addons",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "addon.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node addon.js"
+    "start": "node addon.js",
+    "scrape": "node scrapper.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1",
-    "puppeteer": "^24.43.1",
     "stremio-addon-sdk": "^1.6.10"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.43.1"
+  },
+  "overrides": {
+    "tmp": "0.2.7"
   }
 }
