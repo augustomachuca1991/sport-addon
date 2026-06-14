@@ -1,5 +1,6 @@
 const { addonBuilder } = require("stremio-addon-sdk");
 const express = require("express");
+const sharp = require("sharp");
 
 const PORT = process.env.PORT || 7000;
 
@@ -119,15 +120,13 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.get("/poster/:id", (req, res) => {
+app.get("/poster/:id", async (req, res) => {
   const ch = channels[req.params.id];
   if (!ch) return res.status(404).end();
 
   const logo = ch.logo?.startsWith("//") ? "https:" + ch.logo : ch.logo || "";
 
-  res.setHeader("Content-Type", "image/svg+xml");
-  res.setHeader("Cache-Control", "public, max-age=86400");
-  res.send(`<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450">
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1a1a2e"/>
@@ -137,7 +136,17 @@ app.get("/poster/:id", (req, res) => {
   <rect width="300" height="450" fill="url(#bg)" rx="8"/>
   <image href="${logo}" x="40" y="90" width="220" height="220" preserveAspectRatio="xMidYMid meet"/>
   <text x="150" y="380" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="18" font-weight="bold">${ch.name}</text>
-</svg>`);
+</svg>`;
+
+  try {
+    const png = await sharp(Buffer.from(svg)).png().toBuffer();
+    res.setHeader("Content-Type", "image/png");
+    res.setHeader("Cache-Control", "public, max-age=86400");
+    res.send(png);
+  } catch (err) {
+    console.error("Error generating poster:", err);
+    res.status(500).end();
+  }
 });
 
 app.post("/update", (req, res) => {

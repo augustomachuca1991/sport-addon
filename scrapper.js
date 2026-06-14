@@ -57,18 +57,17 @@ async function capturarStreams(urls, nombre) {
         streams.push({
           title: `${nombre} — Opción ${i + 1}`,
           url: capturada,
-          ...(capturada.includes(".mpd") && {
-            behaviorHints: {
-              notWebReady: true,
-              proxyHeaders: {
-                request: {
-                  Origin: "https://nebunexa.life",
-                  Referer: "https://nebunexa.life/",
-                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                },
+          referrer: url,
+          behaviorHints: {
+            notWebReady: true,
+            proxyHeaders: {
+              request: {
+                Origin: new URL(url).origin,
+                Referer: url,
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
               },
             },
-          }),
+          },
         });
       } else {
         console.log(`  ⚠️  Sin stream en opción ${i + 1}`);
