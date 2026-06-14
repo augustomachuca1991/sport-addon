@@ -6,14 +6,14 @@ const PORT = process.env.PORT || 7000;
 const channels = {
   dsports: {
     name: "DSports",
-    poster: "/poster/dsports",
+    poster: "https://sport-addon.onrender.com/poster/dsports",
     logo: "https://bestleague.world/img/dsportsplus.webp",
     description: "DirecTV Sports en vivo",
     streams: [],
   },
   tycsports: {
     name: "TyC Sports",
-    poster: "/poster/tycsports",
+    poster: "https://sport-addon.onrender.com/poster/tycsports",
     logo: "https://bestleague.world/img/tyc.webp",
     description: "TyC Sports Argentina en vivo",
     streams: [],
