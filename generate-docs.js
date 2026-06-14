@@ -7,18 +7,6 @@ const BASE_URL = "https://augustomachuca1991.github.io/sport-addon";
 const CHANNELS = {
   dsports: { name: "DSports", description: "DirecTV Sports en vivo" },
   tntsports: { name: "TNT Sports", description: "TNT Sports en vivo" },
-  espnpremium: { name: "ESPN Premium", description: "ESPN Premium en vivo" },
-  tycsport: { name: "TyC Sports", description: "TyC Sports en vivo" },
-  espn: { name: "ESPN", description: "ESPN en vivo" },
-  espn2: { name: "ESPN 2", description: "ESPN 2 en vivo" },
-  espn3: { name: "ESPN 3", description: "ESPN 3 en vivo" },
-  dsports2: { name: "DSports 2", description: "DirecTV Sports 2 en vivo" },
-  foxsports: { name: "Fox Sports", description: "Fox Sports en vivo" },
-  foxsports2: { name: "Fox Sports 2", description: "Fox Sports 2 en vivo" },
-  foxsports3: { name: "Fox Sports 3", description: "Fox Sports 3 en vivo" },
-  tudn: { name: "TUDN", description: "TUDN en vivo" },
-  winsport: { name: "Win Sports+", description: "Win Sports+ en vivo" },
-  telefe: { name: "Telefe", description: "Telefe en vivo" },
 };
 
 const imgUrl = (id) => `${BASE_URL}/static/logos/${id}.svg`;

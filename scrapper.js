@@ -7,18 +7,18 @@ const MAX_OPCIONES = 5;
 const POST_IDS = {
   dsports: { post: 47, slug: "directv-sports" },
   tntsports: { post: 50, slug: "tnt-sports" },
-  espnpremium: { post: 35, slug: "espn-premium" },
-  tycsport: { post: 91, slug: "tyc-sports" },
-  espn: { post: 32, slug: "espn-1" },
-  espn2: { post: 33, slug: "espn-2" },
-  espn3: { post: 34, slug: "espn-3" },
-  dsports2: { post: 49, slug: "directv-sports-2" },
-  foxsports: { post: 37, slug: "fox-sports" },
-  foxsports2: { post: 38, slug: "fox-sports-2" },
-  foxsports3: { post: 39, slug: "fox-sports-3" },
-  tudn: { post: 89, slug: "tudn" },
-  winsport: { post: 702, slug: "win-sports" },
-  telefe: { post: 348, slug: "telefe" },
+  // espnpremium: { post: 35, slug: "espn-premium" },
+  // tycsport: { post: 91, slug: "tyc-sports" },
+  // espn: { post: 32, slug: "espn-1" },
+  // espn2: { post: 33, slug: "espn-2" },
+  // espn3: { post: 34, slug: "espn-3" },
+  // dsports2: { post: 49, slug: "directv-sports-2" },
+  // foxsports: { post: 37, slug: "fox-sports" },
+  // foxsports2: { post: 38, slug: "fox-sports-2" },
+  // foxsports3: { post: 39, slug: "fox-sports-3" },
+  // tudn: { post: 89, slug: "tudn" },
+  // winsport: { post: 702, slug: "win-sports" },
+  // telefe: { post: 348, slug: "telefe" },
 };
 
 const BASE_URL = "https://augustomachuca1991.github.io/sport-addon";
@@ -36,78 +36,78 @@ const CHANNELS = {
     logo: `${BASE_URL}/static/logos/tntsports.svg`,
     description: "TNT Sports en vivo",
   },
-  espnpremium: {
-    name: "ESPN Premium",
-    poster: `${BASE_URL}/static/logos/espnpremium.svg`,
-    logo: `${BASE_URL}/static/logos/espnpremium.svg`,
-    description: "ESPN Premium en vivo",
-  },
-  tycsport: {
-    name: "TyC Sports",
-    poster: `${BASE_URL}/static/logos/tycsport.svg`,
-    logo: `${BASE_URL}/static/logos/tycsport.svg`,
-    description: "TyC Sports en vivo",
-  },
-  espn: {
-    name: "ESPN",
-    poster: `${BASE_URL}/static/logos/espn.svg`,
-    logo: `${BASE_URL}/static/logos/espn.svg`,
-    description: "ESPN en vivo",
-  },
-  espn2: {
-    name: "ESPN 2",
-    poster: `${BASE_URL}/static/logos/espn2.svg`,
-    logo: `${BASE_URL}/static/logos/espn2.svg`,
-    description: "ESPN 2 en vivo",
-  },
-  espn3: {
-    name: "ESPN 3",
-    poster: `${BASE_URL}/static/logos/espn3.svg`,
-    logo: `${BASE_URL}/static/logos/espn3.svg`,
-    description: "ESPN 3 en vivo",
-  },
-  dsports2: {
-    name: "DSports 2",
-    poster: `${BASE_URL}/static/logos/dsports2.svg`,
-    logo: `${BASE_URL}/static/logos/dsports2.svg`,
-    description: "DirecTV Sports 2 en vivo",
-  },
-  foxsports: {
-    name: "Fox Sports",
-    poster: `${BASE_URL}/static/logos/foxsports.svg`,
-    logo: `${BASE_URL}/static/logos/foxsports.svg`,
-    description: "Fox Sports en vivo",
-  },
-  foxsports2: {
-    name: "Fox Sports 2",
-    poster: `${BASE_URL}/static/logos/foxsports2.svg`,
-    logo: `${BASE_URL}/static/logos/foxsports2.svg`,
-    description: "Fox Sports 2 en vivo",
-  },
-  foxsports3: {
-    name: "Fox Sports 3",
-    poster: `${BASE_URL}/static/logos/foxsports3.svg`,
-    logo: `${BASE_URL}/static/logos/foxsports3.svg`,
-    description: "Fox Sports 3 en vivo",
-  },
-  tudn: {
-    name: "TUDN",
-    poster: `${BASE_URL}/static/logos/tudn.svg`,
-    logo: `${BASE_URL}/static/logos/tudn.svg`,
-    description: "TUDN en vivo",
-  },
-  winsport: {
-    name: "Win Sports+",
-    poster: `${BASE_URL}/static/logos/winsport.svg`,
-    logo: `${BASE_URL}/static/logos/winsport.svg`,
-    description: "Win Sports+ en vivo",
-  },
-  telefe: {
-    name: "Telefe",
-    poster: `${BASE_URL}/static/logos/telefe.svg`,
-    logo: `${BASE_URL}/static/logos/telefe.svg`,
-    description: "Telefe en vivo",
-  },
+  // espnpremium: {
+  //   name: "ESPN Premium",
+  //   poster: `${BASE_URL}/static/logos/espnpremium.svg`,
+  //   logo: `${BASE_URL}/static/logos/espnpremium.svg`,
+  //   description: "ESPN Premium en vivo",
+  // },
+  // tycsport: {
+  //   name: "TyC Sports",
+  //   poster: `${BASE_URL}/static/logos/tycsport.svg`,
+  //   logo: `${BASE_URL}/static/logos/tycsport.svg`,
+  //   description: "TyC Sports en vivo",
+  // },
+  // espn: {
+  //   name: "ESPN",
+  //   poster: `${BASE_URL}/static/logos/espn.svg`,
+  //   logo: `${BASE_URL}/static/logos/espn.svg`,
+  //   description: "ESPN en vivo",
+  // },
+  // espn2: {
+  //   name: "ESPN 2",
+  //   poster: `${BASE_URL}/static/logos/espn2.svg`,
+  //   logo: `${BASE_URL}/static/logos/espn2.svg`,
+  //   description: "ESPN 2 en vivo",
+  // },
+  // espn3: {
+  //   name: "ESPN 3",
+  //   poster: `${BASE_URL}/static/logos/espn3.svg`,
+  //   logo: `${BASE_URL}/static/logos/espn3.svg`,
+  //   description: "ESPN 3 en vivo",
+  // },
+  // dsports2: {
+  //   name: "DSports 2",
+  //   poster: `${BASE_URL}/static/logos/dsports2.svg`,
+  //   logo: `${BASE_URL}/static/logos/dsports2.svg`,
+  //   description: "DirecTV Sports 2 en vivo",
+  // },
+  // foxsports: {
+  //   name: "Fox Sports",
+  //   poster: `${BASE_URL}/static/logos/foxsports.svg`,
+  //   logo: `${BASE_URL}/static/logos/foxsports.svg`,
+  //   description: "Fox Sports en vivo",
+  // },
+  // foxsports2: {
+  //   name: "Fox Sports 2",
+  //   poster: `${BASE_URL}/static/logos/foxsports2.svg`,
+  //   logo: `${BASE_URL}/static/logos/foxsports2.svg`,
+  //   description: "Fox Sports 2 en vivo",
+  // },
+  // foxsports3: {
+  //   name: "Fox Sports 3",
+  //   poster: `${BASE_URL}/static/logos/foxsports3.svg`,
+  //   logo: `${BASE_URL}/static/logos/foxsports3.svg`,
+  //   description: "Fox Sports 3 en vivo",
+  // },
+  // tudn: {
+  //   name: "TUDN",
+  //   poster: `${BASE_URL}/static/logos/tudn.svg`,
+  //   logo: `${BASE_URL}/static/logos/tudn.svg`,
+  //   description: "TUDN en vivo",
+  // },
+  // winsport: {
+  //   name: "Win Sports+",
+  //   poster: `${BASE_URL}/static/logos/winsport.svg`,
+  //   logo: `${BASE_URL}/static/logos/winsport.svg`,
+  //   description: "Win Sports+ en vivo",
+  // },
+  // telefe: {
+  //   name: "Telefe",
+  //   poster: `${BASE_URL}/static/logos/telefe.svg`,
+  //   logo: `${BASE_URL}/static/logos/telefe.svg`,
+  //   description: "Telefe en vivo",
+  // },
 };
 
 function fetchJSON(url, referer) {
@@ -173,14 +173,16 @@ async function capturarStreams(browser, urls, nombre) {
         streams.push({
           title: `${nombre} — ${dominio}`,
           url: capturada,
-          ...(capturada.includes(".mpd") && {
-            behaviorHints: {
-              notWebReady: true,
-              proxyHeaders: {
-                request: { Origin: `https://${dominio}`, Referer: `https://${dominio}/`, "User-Agent": "Mozilla/5.0" },
+          behaviorHints: {
+            notWebReady: true,
+            proxyHeaders: {
+              request: {
+                Origin: `https://${dominio}`,
+                Referer: `https://${dominio}/`,
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
               },
             },
-          }),
+          },
         });
       }
     } catch (err) {
