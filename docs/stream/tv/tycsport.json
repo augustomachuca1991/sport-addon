@@ -1,3 +1,16 @@
 {
-  "streams": []
+  "streams": [
+    {
+      "title": "TyC Sports — la18hd.com",
+      "url": "https://rm8zcvk3.fubo18.com/tycinternacional/mono.m3u8?token=3d48943b212bfcd19c96ee2a366a8e7ae64a8095-5-1781447237-1781429237"
+    },
+    {
+      "title": "TyC Sports — tvtvhd.com",
+      "url": "https://anvtcax.fubo18.com/tycsports/mono.m3u8?token=a3b5dd2e0ee3d560dfdc86e7470fdd091f9c746c-e9-1781447272-1781429272"
+    },
+    {
+      "title": "TyC Sports — streamtpday1.xyz",
+      "url": "https://st.streamtpday1.xyz/global/tycsports/index.m3u8?token=a354a752a1c858662970b149da03728e2ff1350c-5c-1781475194-1781421194&ip=172.215.217.240"
+    }
+  ]
 }
