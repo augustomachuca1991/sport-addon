@@ -1,42 +1,42 @@
 {
   "streams": [
     {
-      "title": "TyC Sports — la18hd.com",
-      "url": "https://x4bnd7lq.fubo18.com/tycinternacional/mono.m3u8?token=e2550ee45f5161e72b711b176b11687bbf8ae20b-f9-1781451402-1781433402",
+      "title": "TyC Sports — futbol-libres",
+      "url": "https://bdjky.vivolatamz.org:443/lb01/tycsports/index.m3u8?token=bf91908b5272c1fa0ae44e3b1d849a48153cc081-43-1781481866-1781427866&ip=200.55.245.145",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://la18hd.com",
-            "Referer": "https://la18hd.com/",
+            "Origin": "https://bdjky.vivolatamz.org",
+            "Referer": "https://bdjky.vivolatamz.org/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "TyC Sports — tvtvhd.com",
-      "url": "https://ym9yzq.fubo18.com/tycsports/mono.m3u8?token=1e2718d572d4032471f5ca59b9d3ef3b7bcbeaad-9f-1781451432-1781433432",
+      "title": "TyC Sports — am91cm5leq.fubo18.com",
+      "url": "https://am91cm5leQ.fubo18.com:443/tycsports/mono.m3u8?token=8de5638c0c28715f01ce6bf6bee5ca88c78208a4-53-1781453975-1781435975",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://tvtvhd.com",
-            "Referer": "https://tvtvhd.com/",
+            "Origin": "https://am91cm5leq.fubo18.com",
+            "Referer": "https://am91cm5leq.fubo18.com/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "TyC Sports — streamtpday1.xyz",
-      "url": "https://sa.streamtpday1.xyz/global/tycsports/index.m3u8?token=4da7f03d32f26a67ab8331ecd36d8fd20255a836-bb-1781479353-1781425353&ip=157.55.189.25",
+      "title": "TyC Sports — sa.streamtpday1.xyz",
+      "url": "https://sa.streamtpday1.xyz:443/global/tycsports/index.m3u8?token=7be1b0e50cbe5a985788339c4edf6cafbe5fc6e3-b2-1781481877-1781427877&ip=200.55.245.145",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://streamtpday1.xyz",
-            "Referer": "https://streamtpday1.xyz/",
+            "Origin": "https://sa.streamtpday1.xyz",
+            "Referer": "https://sa.streamtpday1.xyz/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }

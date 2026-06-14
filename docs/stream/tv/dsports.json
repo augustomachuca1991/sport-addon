@@ -1,42 +1,42 @@
 {
   "streams": [
     {
-      "title": "DSports — la18hd.com",
-      "url": "https://cgxheq.fubo18.com/dsports/mono.m3u8?token=cb9eb1bad7c8ef37ffd5aa3631114da1afda6e1f-82-1781451238-1781433238",
+      "title": "DSports — futbol-libres",
+      "url": "https://acvrt.vivolatamz.org:443/lb01/dsports/index.m3u8?token=a578436988b6bb2e1aa147803160738f443e03fc-d9-1781481850-1781427850&ip=200.55.245.145",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://la18hd.com",
-            "Referer": "https://la18hd.com/",
+            "Origin": "https://acvrt.vivolatamz.org",
+            "Referer": "https://acvrt.vivolatamz.org/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "DSports — tvtvhd.com",
-      "url": "https://cgxheq.fubo18.com/dsports/mono.m3u8?token=b72514994d735253a4616203e3f6cc0fa886b7b2-e6-1781451228-1781433228",
+      "title": "DSports — tyg2mnl9.fubo18.com",
+      "url": "https://tyg2mnl9.fubo18.com:443/dsports/mono.m3u8?token=63e9f6a015f639d55b3eadde9fe9c06161d42321-3b-1781453958-1781435958",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://tvtvhd.com",
-            "Referer": "https://tvtvhd.com/",
+            "Origin": "https://tyg2mnl9.fubo18.com",
+            "Referer": "https://tyg2mnl9.fubo18.com/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "DSports — streamtpday1.xyz",
-      "url": "https://st.streamtpday1.xyz/global/dsports/index.m3u8?token=03d84c7df298f06e086d601e84cefc56a79745c0-20-1781479197-1781425197&ip=157.55.189.25",
+      "title": "DSports — sa.streamtpday1.xyz",
+      "url": "https://sa.streamtpday1.xyz:443/global/dsports/index.m3u8?token=29a7b8beec6c4bf3cdce64065a7aa611c3cf84fd-d4-1781481860-1781427860&ip=200.55.245.145",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://streamtpday1.xyz",
-            "Referer": "https://streamtpday1.xyz/",
+            "Origin": "https://sa.streamtpday1.xyz",
+            "Referer": "https://sa.streamtpday1.xyz/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }

@@ -1,27 +1,20 @@
-const puppeteer = require("puppeteer");
 const https = require("https");
 const fs = require("fs");
 
 const MAX_OPCIONES = 5;
+const BASE_URL = "https://augustomachuca1991.github.io/sport-addon";
 
-const POST_IDS = {
-  dsports: { post: 47, slug: "directv-sports" },
-  tntsports: { post: 50, slug: "tnt-sports" },
-  // espnpremium: { post: 35, slug: "espn-premium" },
-  tycsport: { post: 91, slug: "tyc-sports" },
-  // espn: { post: 32, slug: "espn-1" },
-  // espn2: { post: 33, slug: "espn-2" },
-  // espn3: { post: 34, slug: "espn-3" },
-  // dsports2: { post: 49, slug: "directv-sports-2" },
-  // foxsports: { post: 37, slug: "fox-sports" },
-  // foxsports2: { post: 38, slug: "fox-sports-2" },
-  // foxsports3: { post: 39, slug: "fox-sports-3" },
-  // tudn: { post: 89, slug: "tudn" },
-  // winsport: { post: 702, slug: "win-sports" },
-  // telefe: { post: 348, slug: "telefe" },
+const FUTBOL_LIBRE_IDS = {
+  dsports: "dsports",
+  tntsports: "tntsports",
+  tycsport: "tycsports",
 };
 
-const BASE_URL = "https://augustomachuca1991.github.io/sport-addon";
+const TVLIBRE_SLUGS = {
+  dsports: "dsports",
+  tntsports: "tnt-sports",
+  tycsport: "tyc-sports",
+};
 
 const CHANNELS = {
   dsports: {
@@ -36,173 +29,149 @@ const CHANNELS = {
     logo: `${BASE_URL}/static/logos/tntsports.svg`,
     description: "TNT Sports en vivo",
   },
-  // espnpremium: {
-  //   name: "ESPN Premium",
-  //   poster: `${BASE_URL}/static/logos/espnpremium.svg`,
-  //   logo: `${BASE_URL}/static/logos/espnpremium.svg`,
-  //   description: "ESPN Premium en vivo",
-  // },
   tycsport: {
     name: "TyC Sports",
     poster: `${BASE_URL}/static/logos/tycsport.svg`,
     logo: `${BASE_URL}/static/logos/tycsport.svg`,
     description: "TyC Sports en vivo",
   },
-  // espn: {
-  //   name: "ESPN",
-  //   poster: `${BASE_URL}/static/logos/espn.svg`,
-  //   logo: `${BASE_URL}/static/logos/espn.svg`,
-  //   description: "ESPN en vivo",
-  // },
-  // espn2: {
-  //   name: "ESPN 2",
-  //   poster: `${BASE_URL}/static/logos/espn2.svg`,
-  //   logo: `${BASE_URL}/static/logos/espn2.svg`,
-  //   description: "ESPN 2 en vivo",
-  // },
-  // espn3: {
-  //   name: "ESPN 3",
-  //   poster: `${BASE_URL}/static/logos/espn3.svg`,
-  //   logo: `${BASE_URL}/static/logos/espn3.svg`,
-  //   description: "ESPN 3 en vivo",
-  // },
-  // dsports2: {
-  //   name: "DSports 2",
-  //   poster: `${BASE_URL}/static/logos/dsports2.svg`,
-  //   logo: `${BASE_URL}/static/logos/dsports2.svg`,
-  //   description: "DirecTV Sports 2 en vivo",
-  // },
-  // foxsports: {
-  //   name: "Fox Sports",
-  //   poster: `${BASE_URL}/static/logos/foxsports.svg`,
-  //   logo: `${BASE_URL}/static/logos/foxsports.svg`,
-  //   description: "Fox Sports en vivo",
-  // },
-  // foxsports2: {
-  //   name: "Fox Sports 2",
-  //   poster: `${BASE_URL}/static/logos/foxsports2.svg`,
-  //   logo: `${BASE_URL}/static/logos/foxsports2.svg`,
-  //   description: "Fox Sports 2 en vivo",
-  // },
-  // foxsports3: {
-  //   name: "Fox Sports 3",
-  //   poster: `${BASE_URL}/static/logos/foxsports3.svg`,
-  //   logo: `${BASE_URL}/static/logos/foxsports3.svg`,
-  //   description: "Fox Sports 3 en vivo",
-  // },
-  // tudn: {
-  //   name: "TUDN",
-  //   poster: `${BASE_URL}/static/logos/tudn.svg`,
-  //   logo: `${BASE_URL}/static/logos/tudn.svg`,
-  //   description: "TUDN en vivo",
-  // },
-  // winsport: {
-  //   name: "Win Sports+",
-  //   poster: `${BASE_URL}/static/logos/winsport.svg`,
-  //   logo: `${BASE_URL}/static/logos/winsport.svg`,
-  //   description: "Win Sports+ en vivo",
-  // },
-  // telefe: {
-  //   name: "Telefe",
-  //   poster: `${BASE_URL}/static/logos/telefe.svg`,
-  //   logo: `${BASE_URL}/static/logos/telefe.svg`,
-  //   description: "Telefe en vivo",
-  // },
 };
 
-function fetchJSON(url, referer) {
-  return new Promise((resolve, reject) => {
-    https.get(url, { headers: { "User-Agent": "Mozilla/5.0", Referer: referer } }, (res) => {
-      let d = "";
-      res.on("data", (c) => d += c);
+function fetchWithRedirect(url, referer, depth) {
+  if (depth <= 0) return Promise.resolve({ status: 0, body: "" });
+  return new Promise((resolve) => {
+    https.get(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        Referer: referer || url,
+      },
+    }, (res) => {
+      let data = "";
+      res.on("data", (c) => data += c);
       res.on("end", () => {
-        try { resolve(JSON.parse(d)); } catch (e) { reject(e); }
+        if (res.statusCode >= 300 && res.statusCode < 400) {
+          const loc = res.headers.location;
+          const abs = loc.startsWith("http") ? loc : new URL(loc, url).href;
+          resolve(fetchWithRedirect(abs, url, depth - 1));
+        } else {
+          resolve({ status: res.statusCode, type: res.headers["content-type"], body: data });
+        }
       });
-    }).on("error", reject);
+    }).on("error", () => resolve({ status: 0, body: "" }));
   });
 }
 
-async function obtenerEmbedUrls() {
-  const results = {};
-  for (const [canal, info] of Object.entries(POST_IDS)) {
-    const urls = [];
-    for (let nume = 1; nume <= MAX_OPCIONES; nume++) {
-      try {
-        const urlStr = `https://deporflix.net/wp-json/dooplayer/v2/${info.post}/movie/${nume}`;
-        const referer = `https://deporflix.net/canales/${info.slug}/`;
-        const json = await fetchJSON(urlStr, referer);
-        if (!json.embed_url) continue;
+function fetchHtml(url, referer) {
+  return fetchWithRedirect(url, referer, 5).then(r => r.body || "");
+}
 
-        let url = json.embed_url.trim();
-        if (json.type === "dtshcode") {
-          const m = url.match(/src="([^"]+)"/);
-          if (m) url = m[1];
-          else continue;
-        }
-        url = url.replace(/[\t]+$/, "").trim();
-        urls.push(url);
-      } catch (e) {
-        break;
-      }
-    }
-    if (urls.length > 0) results[canal] = urls;
-    console.log(`  📡 ${CHANNELS[canal]?.name || canal}: ${urls.length} fuente(s)`);
+function extraerPlaybackURL(html) {
+  const m = html.match(/playbackURL\s*=\s*"((?:[^"\\]|\\.)*)"/);
+  if (!m) return null;
+  return m[1].replace(/\\\//g, "/");
+}
+
+async function validarStream(url, referer) {
+  try {
+    const r = await fetchWithRedirect(url, referer, 5);
+    return r.status === 200 && r.type && r.type.includes("mpegurl");
+  } catch {
+    return false;
   }
+}
+
+function makeStreamEntry(title, url, dominio) {
+  return {
+    title,
+    url,
+    behaviorHints: {
+      notWebReady: true,
+      proxyHeaders: {
+        request: {
+          Origin: `https://${dominio}`,
+          Referer: `https://${dominio}/`,
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        },
+      },
+    },
+  };
+}
+
+async function scrapeFutbolLibre(channelId) {
+  const streamId = FUTBOL_LIBRE_IDS[channelId];
+  if (!streamId) return [];
+
+  const ch = CHANNELS[channelId];
+  const url = `https://latamvidz1.com/canal.php?stream=${streamId}`;
+  const ref = `https://futbol-libres.su/${streamId}/`;
+
+  console.log(`    📡 futbol-libres → ${url}`);
+
+  const html = await fetchHtml(url, ref);
+  const pb = extraerPlaybackURL(html);
+  if (!pb) {
+    console.log(`    ❌ no playbackURL`);
+    return [];
+  }
+
+  const dominio = new URL(pb).hostname;
+  console.log(`    🔍 validando ${pb.substring(0, 80)}...`);
+
+  if (await validarStream(pb, url)) {
+    console.log(`    ✅ ${dominio}`);
+    return [makeStreamEntry(`${ch.name} — futbol-libres`, pb, dominio)];
+  } else {
+    console.log(`    ❌ stream muerto`);
+    return [];
+  }
+}
+
+async function scrapeTvlibre(channelId) {
+  const slug = TVLIBRE_SLUGS[channelId];
+  if (!slug) return [];
+
+  const ch = CHANNELS[channelId];
+  const pageUrl = `https://tvlibre-online.com/en-vivo/${slug}/`;
+  const ref = `https://tvlibre-online.com/`;
+
+  console.log(`    📡 tvlibre-online → ${pageUrl}`);
+
+  const html = await fetchHtml(pageUrl, ref);
+  const options = [...html.matchAll(/onclick="document.getElementById\('iframe'\)\.src='([^']+)'/g)];
+
+  if (options.length === 0) {
+    console.log(`    ❌ no se encontraron opciones`);
+    return [];
+  }
+
+  const results = [];
+  for (const m of options) {
+    const iframeUrl = m[1];
+    if (!iframeUrl.includes("la18hd.com") && !iframeUrl.includes("streamtpday1.xyz")) continue;
+    if (results.length >= MAX_OPCIONES) break;
+
+    console.log(`    🔍 ${iframeUrl.substring(0, 70)}...`);
+    const iframeHtml = await fetchHtml(iframeUrl, pageUrl);
+    const pb = extraerPlaybackURL(iframeHtml);
+
+    if (!pb) {
+      console.log(`      ❌ no playbackURL`);
+      continue;
+    }
+
+    const dominio = new URL(pb).hostname;
+    if (await validarStream(pb, iframeUrl)) {
+      console.log(`      ✅ ${dominio}`);
+      results.push(makeStreamEntry(`${ch.name} — ${dominio}`, pb, dominio));
+    } else {
+      console.log(`      ❌ stream muerto`);
+    }
+  }
+
   return results;
 }
 
-async function capturarStreams(browser, urls, nombre) {
-  const streams = [];
-  for (const [i, url] of urls.entries()) {
-    const page = await browser.newPage();
-    let capturada = null;
-    let dominio;
-    try { dominio = new URL(url).hostname; } catch (e) { dominio = `fuente_${i + 1}`; }
-
-    page.on("request", (req) => {
-      const u = req.url();
-      if ((u.includes(".m3u8") || u.includes(".mpd")) && !capturada) capturada = u;
-    });
-
-    try {
-      console.log(`    🔍 ${nombre} — ${dominio}`);
-      await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
-      await new Promise((r) => setTimeout(r, 8000));
-      if (capturada) {
-        console.log(`    ✅ ${capturada.substring(0, 80)}`);
-        streams.push({
-          title: `${nombre} — ${dominio}`,
-          url: capturada,
-          behaviorHints: {
-            notWebReady: true,
-            proxyHeaders: {
-              request: {
-                Origin: `https://${dominio}`,
-                Referer: `https://${dominio}/`,
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-              },
-            },
-          },
-        });
-      }
-    } catch (err) {
-      console.log(`    ❌ ${err.message}`);
-    }
-    await page.close();
-  }
-  streams.sort((a, b) => {
-    const aLa = a.title.includes("la14hd.com") || a.title.includes("la18hd.com");
-    const bLa = b.title.includes("la14hd.com") || b.title.includes("la18hd.com");
-    if (aLa && !bLa) return -1;
-    if (!aLa && bLa) return 1;
-    return 0;
-  });
-  return streams;
-}
-
 function generarJSONs(channelStreams) {
-  const docsDir = path => `docs/${path}`;
-
   const manifest = {
     id: "org.local.sports.autoquality",
     version: "1.2.0",
@@ -229,7 +198,6 @@ function generarJSONs(channelStreams) {
 
   const docsStreamDir = "docs/stream/tv";
   if (!fs.existsSync(docsStreamDir)) fs.mkdirSync(docsStreamDir, { recursive: true });
-
   for (const [id, data] of Object.entries(channelStreams)) {
     fs.writeFileSync(`${docsStreamDir}/${id}.json`, JSON.stringify({ streams: data.streams || data }, null, 2));
   }
@@ -252,34 +220,34 @@ function generarJSONs(channelStreams) {
 async function main() {
   console.log(`🚀 Scrapeando streams — ${new Date().toLocaleString()}\n`);
 
-  const embedUrls = await obtenerEmbedUrls();
   const channelStreams = {};
 
-  if (Object.keys(embedUrls).length === 0) {
-    console.log("⚠️ deporflix no respondió, se genera JSON vacío");
-    generarJSONs(channelStreams);
-    return;
-  }
+  for (const [id, ch] of Object.entries(CHANNELS)) {
+    console.log(`\n📺 ${ch.name}`);
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+    const futbolLibreStreams = await scrapeFutbolLibre(id);
+    const tvlibreStreams = await scrapeTvlibre(id);
 
-  for (const [canal, urls] of Object.entries(embedUrls)) {
-    const ch = CHANNELS[canal];
-    if (!ch) { console.log(`\n⚠️ Canal ${canal} sin metadatos, se omite`); continue; }
-    console.log(`\n📺 ${ch.name} (${urls.length} fuentes)`);
-    const streams = await capturarStreams(browser, urls, ch.name);
-    if (streams.length > 0) {
-      channelStreams[canal] = { ...ch, streams };
-      console.log(`  ✅ ${streams.length} stream(s)`);
+    let allStreams = [...futbolLibreStreams, ...tvlibreStreams];
+
+    allStreams.sort((a, b) => {
+      const aLa = a.title.includes("la18hd.com") || a.title.includes("futbol-libres");
+      const bLa = b.title.includes("la18hd.com") || b.title.includes("futbol-libres");
+      if (aLa && !bLa) return -1;
+      if (!aLa && bLa) return 1;
+      return 0;
+    });
+
+    const selected = allStreams.slice(0, MAX_OPCIONES);
+
+    if (selected.length > 0) {
+      channelStreams[id] = { ...ch, streams: selected };
+      console.log(`  ✅ ${selected.length} stream(s)`);
     } else {
       console.log(`  ⚠️ Sin streams`);
     }
   }
 
-  await browser.close();
   generarJSONs(channelStreams);
   console.log("\n✅ Scraping completado");
 }
