@@ -6,51 +6,115 @@ const PORT = process.env.PORT || 7000;
 const channels = {
   dsports: {
     name: "DSports",
-    poster:
-      "https://imgs.search.brave.com/ZkIS7DI98QxJd0-A9f1zMs9X83l-7gYScPztHxYMfOk/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2xv/Z29wZWRpYS9pbWFn/ZXMvMS8xNS9EaXJl/Y1RWU3BvcnRzMjAx/OC5wbmcvcmV2aXNp/b24vbGF0ZXN0L3Nt/YXJ0L3dpZHRoLzE2/MC9oZWlnaHQvMTIw/P2NiPTIwMTgwMzAx/MjMzODA0",
+    poster: "https://bestleague.world/img/dsports.webp",
     logo: "https://bestleague.world/img/dsportsplus.webp",
-    description: "Direct TV Sports en vivo",
-    streams: [
-      {
-        title: "DSports — Auto",
-        url: "https://wf6kt.envivoslatam.org/dsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=8e18c5903d70f251fcd90b4b1e52f97544a4f383-07-1778581987-1778527987",
-      },
-    ],
+    description: "DirecTV Sports en vivo",
+    streams: [],
   },
-
   tntsports: {
     name: "TNT Sports",
-    poster:
-      "https://imgs.search.brave.com/bVoS1l-fg9Smd76bBVrKdAy07e5_9cgNhYaE4vN2_BA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9MNVFkSzZwWmVI/c2U5THo5dUc1cDdo/SjFCTWRFX3VxSU1N/N1dTeEJLVlJCaTgz/ZFRIdlVOT1lQSjRG/SWczNlpTeXBJPXcy/NDAtaDQ4MC1ydw",
+    poster: "https://bestleague.world/img/tntar.svg",
     logo: "https://assets.tntsports.com.ar/__export/1717073602419/sites/tntsports/arte/logo_header_blanco_20240530.svg",
     description: "TNT Sports en vivo",
-    streams: [
-      {
-        title: "TNT Sports — Opción 1",
-        url: "https://pvtn5y.envivoslatam.org/tntsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=34916878f8c30d8c4860e388e977a2e56999b8b1-c7-1778584686-1778530686",
-      },
-      {
-        title: "TNT Sports — Opción 2",
-        url: "https://cgxheq.fubohd.com/tntsports/mono.m3u8?token=19fd22e88147484488b5b4d3a805ca5e972d428f-ec-1778556817-1778538817",
-      },
-    ],
+    streams: [],
   },
-
   espnpremium: {
     name: "ESPN Premium",
-    poster: "https://angulismo-pics.pages.dev/espn-premium.png",
+    poster: "https://bestleague.world/img/espnpr.webp",
     logo: "https://imgs.search.brave.com/BoO3XQfLmGrGe7PEeBxPtiJC-pAhy_PM-BQvFg544rY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2ExL0VT/UE5fUHJlbWl1bV9s/b2dvLnN2Zy8yNTBw/eC1FU1BOX1ByZW1p/dW1fbG9nby5zdmcu/cG5n",
     description: "ESPN Premium en vivo",
-    streams: [
-      {
-        title: "ESPN Premium — Opción 1",
-        url: "https://xky9q.envivoslatam.org/espnpremium/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=6b8af1b0712202a27c736953f17f7390b6faa84f-53-1778584587-1778530587",
-      },
-      {
-        title: "ESPN Premium — Opción 2",
-        url: "https://bgfuzq.fubohd.com/espnpremium/mono.m3u8?token=087d9925d50a99d6f9e4896d60aff96f1e59aeae-cd-1778556746-1778538746",
-      },
-    ],
+    streams: [],
+  },
+  tycsports: {
+    name: "TyC Sports",
+    poster: "https://bestleague.world/img/tyc.webp",
+    logo: "https://bestleague.world/img/tyc.webp",
+    description: "TyC Sports Argentina en vivo",
+    streams: [],
+  },
+  espn1: {
+    name: "ESPN 1",
+    poster: "https://bestleague.world/img/espn.webp",
+    logo: "https://bestleague.world/img/espn.webp",
+    description: "ESPN 1 en vivo",
+    streams: [],
+  },
+  espn2: {
+    name: "ESPN 2",
+    poster: "https://bestleague.world/img/espn2.webp",
+    logo: "https://bestleague.world/img/espn2.webp",
+    description: "ESPN 2 en vivo",
+    streams: [],
+  },
+  espn3: {
+    name: "ESPN 3",
+    poster: "https://bestleague.world/img/espn3.webp",
+    logo: "https://bestleague.world/img/espn3.webp",
+    description: "ESPN 3 en vivo",
+    streams: [],
+  },
+  foxsports1: {
+    name: "Fox Sports 1",
+    poster: "https://bestleague.world/img/foxnew.png",
+    logo: "https://bestleague.world/img/foxnew.png",
+    description: "Fox Sports 1 Argentina en vivo",
+    streams: [],
+  },
+  foxsports2: {
+    name: "Fox Sports 2",
+    poster: "https://bestleague.world/img/foxnew2.png",
+    logo: "https://bestleague.world/img/foxnew2.png",
+    description: "Fox Sports 2 Argentina en vivo",
+    streams: [],
+  },
+  foxsports3: {
+    name: "Fox Sports 3",
+    poster: "https://bestleague.world/img/foxnew3.png",
+    logo: "https://bestleague.world/img/foxnew3.png",
+    description: "Fox Sports 3 Argentina en vivo",
+    streams: [],
+  },
+  dsports2: {
+    name: "DSports 2",
+    poster: "https://bestleague.world/img/dsports2.webp",
+    logo: "https://bestleague.world/img/dsports2.webp",
+    description: "DirecTV Sports 2 en vivo",
+    streams: [],
+  },
+  dsportsplus: {
+    name: "DSports Plus",
+    poster: "https://bestleague.world/img/dsportsplus.webp",
+    logo: "https://bestleague.world/img/dsportsplus.webp",
+    description: "DirecTV Sports Plus en vivo",
+    streams: [],
+  },
+  telefe: {
+    name: "Telefe",
+    poster: "https://bestleague.world/img/telefe.png",
+    logo: "https://bestleague.world/img/telefe.png",
+    description: "Telefe en vivo",
+    streams: [],
+  },
+  tvpublica: {
+    name: "TV Pública",
+    poster: "https://bestleague.world/img/tvpublica.webp",
+    logo: "https://bestleague.world/img/tvpublica.webp",
+    description: "TV Pública Argentina en vivo",
+    streams: [],
+  },
+  deportv: {
+    name: "DeporTV",
+    poster: "https://bestleague.world/img/deportv.webp",
+    logo: "https://bestleague.world/img/deportv.webp",
+    description: "DeporTV Argentina en vivo",
+    streams: [],
+  },
+  tudn: {
+    name: "TUDN",
+    poster: "https://bestleague.world/img/tudn.png",
+    logo: "https://bestleague.world/img/tudn.png",
+    description: "TUDN en vivo",
+    streams: [],
   },
 };
 

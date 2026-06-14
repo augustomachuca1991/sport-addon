@@ -5,15 +5,132 @@ const RENDER_URL = "https://sport-addon.onrender.com";
 const CANALES = {
   espnpremium: {
     nombre: "ESPN Premium",
-    urls: ["https://nebunexa.life/cvatt.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1", "https://la14hd.com/vivo/canales.php?stream=espnpremium"],
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
+      "https://nebunexa.life/cvatt.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
+      "https://la14hd.com/vivo/canales.php?stream=espnpremium",
+      "https://la18hd.com/vivo/canales.php?stream=espnpremium",
+    ],
   },
   tntsports: {
     nombre: "TNT Sports",
-    urls: ["https://nebunexa.life/cvatt.html?get=VE5UX1Nwb3J0c19IRA&lang=1", "https://la14hd.com/vivo/canales.php?stream=tntsports"],
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=VE5UX1Nwb3J0c19IRA&lang=1",
+      "https://nebunexa.life/cvatt.html?get=VE5UX1Nwb3J0c19IRA&lang=1",
+      "https://la14hd.com/vivo/canales.php?stream=tntsports",
+      "https://la18hd.com/vivo/canal.php?stream=tntsports",
+      "https://streamtpday1.xyz/global1.php?stream=tntsports",
+    ],
   },
   dsports: {
     nombre: "DSports",
-    urls: ["https://nebunexa.life/cvatt.html?get=RFNwb3J0c0hE&lang=1", "https://la14hd.com/vivo/canales.php?stream=dsports"],
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=RFNwb3J0c0hE&lang=1",
+      "https://nebunexa.life/cvatt.html?get=RFNwb3J0c0hE&lang=1",
+      "https://la14hd.com/vivo/canales.php?stream=dsports",
+      "https://la18hd.com/vivo/canales.php?stream=dsports",
+      "https://streamtpday1.xyz/global1.php?stream=dsports",
+    ],
+  },
+  tycsports: {
+    nombre: "TyC Sports",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=VHlDU3BvcnQ&lang=1",
+      "https://la18hd.com/vivo/canales.php?stream=tycsports",
+      "https://streamtpday1.xyz/global1.php?stream=tycsports",
+      "https://welivesports.cfd/embed/tycsportarg.php",
+    ],
+  },
+  espn1: {
+    nombre: "ESPN 1",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=RVNQTjJIRA&lang=1",
+      "https://la18hd.com/vivo/canales.php?stream=espn",
+      "https://streamtpday1.xyz/global1.php?stream=espn",
+      "https://welivesports.cfd/embed/espn1arg.php",
+    ],
+  },
+  espn2: {
+    nombre: "ESPN 2",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=RVNQTjJfQXJn&lang=1",
+      "https://la18hd.com/vivo/canales.php?stream=espn2",
+      "https://streamtpday1.xyz/global1.php?stream=espn2",
+      "https://welivesports.cfd/embed/espn2arg.php",
+    ],
+  },
+  espn3: {
+    nombre: "ESPN 3",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=RVNQTjM&lang=1",
+      "https://la18hd.com/vivo/canales.php?stream=espn3",
+      "https://streamtpday1.xyz/global1.php?stream=espn3",
+    ],
+  },
+  foxsports1: {
+    nombre: "Fox Sports 1",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=Rm94U3BvcnRz&lang=1",
+      "https://la18hd.com/vivo/canales.php?stream=foxsports",
+      "https://streamtpday1.xyz/global1.php?stream=fox1ar",
+      "https://welivesports.cfd/embed/foxsp1arg.php",
+    ],
+  },
+  foxsports2: {
+    nombre: "Fox Sports 2",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=Rm94U3BvcnRzMkhE&lang=1",
+      "https://la18hd.com/vivo/canales.php?stream=foxsports2",
+      "https://streamtpday1.xyz/global1.php?stream=fox2ar",
+    ],
+  },
+  foxsports3: {
+    nombre: "Fox Sports 3",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=Rm94U3BvcnRzM0hE&lang=1",
+      "https://la18hd.com/vivo/canales.php?stream=foxsports3",
+      "https://streamtpday1.xyz/global1.php?stream=fox3ar",
+    ],
+  },
+  dsports2: {
+    nombre: "DSports 2",
+    urls: [
+      "https://la18hd.com/vivo/canales.php?stream=dsports2",
+      "https://streamtpday1.xyz/global1.php?stream=dsports2",
+    ],
+  },
+  dsportsplus: {
+    nombre: "DSports Plus",
+    urls: [
+      "https://streamtpday1.xyz/global1.php?stream=dsportsplus",
+      "https://canalesdeportivos.net/directvplushd.php",
+    ],
+  },
+  telefe: {
+    nombre: "Telefe",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=VGVsZWZlSEQ&lang=1",
+    ],
+  },
+  tvpublica: {
+    nombre: "TV Pública",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=Q2FuYWw3&lang=1",
+      "https://streamtpday1.xyz/global1.php?stream=tv_publica",
+    ],
+  },
+  deportv: {
+    nombre: "DeporTV",
+    urls: [
+      "https://tvlibre-online.com/html/fl/?get=RGVwb3JUVkhE&lang=1",
+    ],
+  },
+  tudn: {
+    nombre: "TUDN",
+    urls: [
+      "https://streamtpday1.xyz/global1.php?stream=tudn_usa",
+      "https://la18hd.com/vivo/canales.php?stream=tudn",
+    ],
   },
 };
 
