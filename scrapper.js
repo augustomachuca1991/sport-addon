@@ -233,6 +233,6 @@ async function correr() {
   console.log("\n✅ Listo");
 }
 
-correr();
+correr().then(() => process.env.CI && process.exit(0));
 setInterval(correr, 12 * 60 * 60 * 1000);
 console.log("⏰ Scraper programado cada 12 horas");
