@@ -1,42 +1,28 @@
 {
   "streams": [
     {
-      "title": "DSports — futbol-libres",
-      "url": "https://emprw.vivolatamz.org:443/lb02/dsports/index.m3u8?token=e53a4c3d65401d9107603d1b2da068f0c00a176f-78-1781482080-1781428080&ip=20.62.204.22",
+      "title": "DSports — la18hd",
+      "url": "https://ag9wzq.fubo18.com:443/dsports/mono.m3u8?token=6ef3b0313b29dd8a80d8e41f3ff5d4465bf0620e-db-1781455845-1781437845",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://emprw.vivolatamz.org",
-            "Referer": "https://emprw.vivolatamz.org/",
+            "Origin": "https://ag9wzq.fubo18.com",
+            "Referer": "https://ag9wzq.fubo18.com/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "DSports — ym9yzq.fubo18.com",
-      "url": "https://ym9yzq.fubo18.com:443/dsports/mono.m3u8?token=0de28e549fe5411adb81d97759050d4464f7f13e-64-1781454188-1781436188",
+      "title": "DSports — latamvidz",
+      "url": "https://kbnue.vivolatamz.org:443/lb03/dsports/index.m3u8?token=d9123481bfb71fb1c0233e9a66d99bdb736d2920-14-1781483741-1781429741&ip=200.55.245.145",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://ym9yzq.fubo18.com",
-            "Referer": "https://ym9yzq.fubo18.com/",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-          }
-        }
-      }
-    },
-    {
-      "title": "DSports — st.streamtpday1.xyz",
-      "url": "https://st.streamtpday1.xyz:443/global/dsports/index.m3u8?token=88eb629e37350a2433af4e745b9e305b89e3eae5-22-1781482089-1781428089&ip=20.62.204.22",
-      "behaviorHints": {
-        "notWebReady": true,
-        "proxyHeaders": {
-          "request": {
-            "Origin": "https://st.streamtpday1.xyz",
-            "Referer": "https://st.streamtpday1.xyz/",
+            "Origin": "https://kbnue.vivolatamz.org",
+            "Referer": "https://kbnue.vivolatamz.org/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }

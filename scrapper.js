@@ -4,65 +4,64 @@ const fs = require("fs");
 const MAX_OPCIONES = 5;
 const BASE_URL = "https://augustomachuca1991.github.io/sport-addon";
 
-const FUTBOL_LIBRE_IDS = {
-  dsports: "dsports",
-  tntsports: "tntsports",
-  tycsport: "tycsports",
+const FUENTES = {
+  la18hd: { url: (id) => `https://la18hd.com/vivo/canales.php?stream=${id}`, dominio: "la18hd.com" },
+  latamvidz: { url: (id) => `https://latamvidz1.com/canal.php?stream=${id}`, dominio: "futbol-libres.su" },
 };
 
-const TVLIBRE_SLUGS = {
+const STREAM_IDS = {
   dsports: "dsports",
-  tntsports: "tnt-sports",
-  tycsport: "tyc-sports",
+  tntsports: "tntsports",
+  espnpremium: "espnpremium",
+  // tycsport: "tycsports",
+  // espn: "espn",
+  // espn2: "espn2",
+  // espn3: "espn3",
+  // dsports2: "dsports2",
+  // dsportsplus: "dsportsplus",
+  // foxsports: "foxsports",
+  // foxsports2: "foxsports2",
+  // foxsports3: "foxsports3",
+  // tudn: "tudn",
+  // winsport: "winsports",
+  // telefe: "telefe",
 };
 
 const CHANNELS = {
-  dsports: {
-    name: "DSports",
-    poster: `${BASE_URL}/static/logos/dsports.svg`,
-    logo: `${BASE_URL}/static/logos/dsports.svg`,
-    description: "DirecTV Sports en vivo",
-  },
-  tntsports: {
-    name: "TNT Sports",
-    poster: `${BASE_URL}/static/logos/tntsports.svg`,
-    logo: `${BASE_URL}/static/logos/tntsports.svg`,
-    description: "TNT Sports en vivo",
-  },
-  tycsport: {
-    name: "TyC Sports",
-    poster: `${BASE_URL}/static/logos/tycsport.svg`,
-    logo: `${BASE_URL}/static/logos/tycsport.svg`,
-    description: "TyC Sports en vivo",
-  },
+  dsports: { name: "DSports", poster: `${BASE_URL}/static/logos/dsports.svg`, logo: `${BASE_URL}/static/logos/dsports.svg`, description: "DirecTV Sports en vivo" },
+  tntsports: { name: "TNT Sports", poster: `${BASE_URL}/static/logos/tntsports.svg`, logo: `${BASE_URL}/static/logos/tntsports.svg`, description: "TNT Sports en vivo" },
+  espnpremium: { name: "ESPN Premium", poster: `${BASE_URL}/static/logos/espnpremium.svg`, logo: `${BASE_URL}/static/logos/espnpremium.svg`, description: "ESPN Premium en vivo" },
+  // tycsport: { name: "TyC Sports", poster: `${BASE_URL}/static/logos/tycsport.svg`, logo: `${BASE_URL}/static/logos/tycsport.svg`, description: "TyC Sports en vivo" },
+  // espn: { name: "ESPN", poster: `${BASE_URL}/static/logos/espn.svg`, logo: `${BASE_URL}/static/logos/espn.svg`, description: "ESPN en vivo" },
+  // espn2: { name: "ESPN 2", poster: `${BASE_URL}/static/logos/espn2.svg`, logo: `${BASE_URL}/static/logos/espn2.svg`, description: "ESPN 2 en vivo" },
+  // espn3: { name: "ESPN 3", poster: `${BASE_URL}/static/logos/espn3.svg`, logo: `${BASE_URL}/static/logos/espn3.svg`, description: "ESPN 3 en vivo" },
+  // dsports2: { name: "DSports 2", poster: `${BASE_URL}/static/logos/dsports2.svg`, logo: `${BASE_URL}/static/logos/dsports2.svg`, description: "DirecTV Sports 2 en vivo" },
+  // dsportsplus: { name: "DSports+", poster: `${BASE_URL}/static/logos/dsportsplus.svg`, logo: `${BASE_URL}/static/logos/dsportsplus.svg`, description: "DSports+ en vivo" },
+  // foxsports: { name: "Fox Sports", poster: `${BASE_URL}/static/logos/foxsports.svg`, logo: `${BASE_URL}/static/logos/foxsports.svg`, description: "Fox Sports en vivo" },
+  // foxsports2: { name: "Fox Sports 2", poster: `${BASE_URL}/static/logos/foxsports2.svg`, logo: `${BASE_URL}/static/logos/foxsports2.svg`, description: "Fox Sports 2 en vivo" },
+  // foxsports3: { name: "Fox Sports 3", poster: `${BASE_URL}/static/logos/foxsports3.svg`, logo: `${BASE_URL}/static/logos/foxsports3.svg`, description: "Fox Sports 3 en vivo" },
+  // tudn: { name: "TUDN", poster: `${BASE_URL}/static/logos/tudn.svg`, logo: `${BASE_URL}/static/logos/tudn.svg`, description: "TUDN en vivo" },
+  // winsport: { name: "Win Sports+", poster: `${BASE_URL}/static/logos/winsport.svg`, logo: `${BASE_URL}/static/logos/winsport.svg`, description: "Win Sports+ en vivo" },
+  // telefe: { name: "Telefe", poster: `${BASE_URL}/static/logos/telefe.svg`, logo: `${BASE_URL}/static/logos/telefe.svg`, description: "Telefe en vivo" },
 };
 
-function fetchWithRedirect(url, referer, depth) {
-  if (depth <= 0) return Promise.resolve({ status: 0, body: "" });
-  return new Promise((resolve) => {
-    https.get(url, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        Referer: referer || url,
-      },
-    }, (res) => {
-      let data = "";
-      res.on("data", (c) => data += c);
+function fetchFollow(url, referer, depth) {
+  if (depth <= 0) return Promise.resolve({ status: 0, body: "", finalUrl: url });
+  return new Promise(r => {
+    https.get(url, { headers: { "User-Agent": "Mozilla/5.0", Referer: referer || url } }, res => {
+      let d = "";
+      res.on("data", c => d += c);
       res.on("end", () => {
         if (res.statusCode >= 300 && res.statusCode < 400) {
           const loc = res.headers.location;
           const abs = loc.startsWith("http") ? loc : new URL(loc, url).href;
-          resolve(fetchWithRedirect(abs, url, depth - 1));
+          r(fetchFollow(abs, url, depth - 1));
         } else {
-          resolve({ status: res.statusCode, type: res.headers["content-type"], body: data });
+          r({ status: res.statusCode, type: res.headers["content-type"], body: d, finalUrl: url });
         }
       });
-    }).on("error", () => resolve({ status: 0, body: "" }));
+    }).on("error", () => r({ status: 0, body: "", finalUrl: url }));
   });
-}
-
-function fetchHtml(url, referer) {
-  return fetchWithRedirect(url, referer, 5).then(r => r.body || "");
 }
 
 function extraerPlaybackURL(html) {
@@ -71,101 +70,57 @@ function extraerPlaybackURL(html) {
   return m[1].replace(/\\\//g, "/");
 }
 
-async function validarStream(url, referer) {
+async function validarYMostrar(url, referer) {
   try {
-    const r = await fetchWithRedirect(url, referer, 5);
-    return r.status === 200 && r.type && r.type.includes("mpegurl");
-  } catch {
+    const r = await fetchFollow(url, referer, 5);
+    if (r.status === 200 && r.type && r.type.includes("mpegurl")) {
+      console.log(`    ✅ ${r.finalUrl}`);
+      return true;
+    }
+    console.log(`    ❌ status ${r.status} type: ${r.type}`);
+    return false;
+  } catch (e) {
+    console.log(`    ❌ ${e.message}`);
     return false;
   }
 }
 
-function makeStreamEntry(title, url, dominio) {
-  return {
-    title,
-    url,
-    behaviorHints: {
-      notWebReady: true,
-      proxyHeaders: {
-        request: {
-          Origin: `https://${dominio}`,
-          Referer: `https://${dominio}/`,
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        },
-      },
-    },
-  };
-}
-
-async function scrapeFutbolLibre(channelId) {
-  const streamId = FUTBOL_LIBRE_IDS[channelId];
-  if (!streamId) return [];
-
+async function scrapearCanal(channelId) {
   const ch = CHANNELS[channelId];
-  const url = `https://latamvidz1.com/canal.php?stream=${streamId}`;
-  const ref = `https://futbol-libres.su/${streamId}/`;
-
-  console.log(`    📡 futbol-libres → ${url}`);
-
-  const html = await fetchHtml(url, ref);
-  const pb = extraerPlaybackURL(html);
-  if (!pb) {
-    console.log(`    ❌ no playbackURL`);
-    return [];
-  }
-
-  const dominio = new URL(pb).hostname;
-  console.log(`    🔍 validando ${pb.substring(0, 80)}...`);
-
-  if (await validarStream(pb, url)) {
-    console.log(`    ✅ ${dominio}`);
-    return [makeStreamEntry(`${ch.name} — futbol-libres`, pb, dominio)];
-  } else {
-    console.log(`    ❌ stream muerto`);
-    return [];
-  }
-}
-
-async function scrapeTvlibre(channelId) {
-  const slug = TVLIBRE_SLUGS[channelId];
-  if (!slug) return [];
-
-  const ch = CHANNELS[channelId];
-  const pageUrl = `https://tvlibre-online.com/en-vivo/${slug}/`;
-  const ref = `https://tvlibre-online.com/`;
-
-  console.log(`    📡 tvlibre-online → ${pageUrl}`);
-
-  const html = await fetchHtml(pageUrl, ref);
-  const options = [...html.matchAll(/onclick="document.getElementById\('iframe'\)\.src='([^']+)'/g)];
-
-  if (options.length === 0) {
-    console.log(`    ❌ no se encontraron opciones`);
-    return [];
-  }
+  const streamId = STREAM_IDS[channelId];
+  if (!ch || !streamId) return [];
 
   const results = [];
-  for (const m of options) {
-    const iframeUrl = m[1];
-    if (!iframeUrl.includes("la18hd.com") && !iframeUrl.includes("streamtpday1.xyz")) continue;
+
+  for (const [nombre, fuente] of Object.entries(FUENTES)) {
     if (results.length >= MAX_OPCIONES) break;
+    const url = fuente.url(streamId);
+    const ref = `https://${fuente.dominio}/`;
+    console.log(`  🔍 ${nombre} → ${url}`);
 
-    console.log(`    🔍 ${iframeUrl.substring(0, 70)}...`);
-    const iframeHtml = await fetchHtml(iframeUrl, pageUrl);
-    const pb = extraerPlaybackURL(iframeHtml);
+    const html = await fetchFollow(url, ref);
+    const pb = extraerPlaybackURL(html.body);
 
-    if (!pb) {
-      console.log(`      ❌ no playbackURL`);
-      continue;
-    }
+    if (!pb) { console.log(`    ❌ no playbackURL`); continue; }
+
+    console.log(`    📦 playbackURL: ${pb}`);
+    if (!await validarYMostrar(pb, url)) { console.log(`    ❌ stream muerto`); continue; }
 
     const dominio = new URL(pb).hostname;
-    if (await validarStream(pb, iframeUrl)) {
-      console.log(`      ✅ ${dominio}`);
-      results.push(makeStreamEntry(`${ch.name} — ${dominio}`, pb, dominio));
-    } else {
-      console.log(`      ❌ stream muerto`);
-    }
+    results.push({
+      title: `${ch.name} — ${nombre}`,
+      url: pb,
+      behaviorHints: {
+        notWebReady: true,
+        proxyHeaders: {
+          request: {
+            Origin: `https://${dominio}`,
+            Referer: `https://${dominio}/`,
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+          },
+        },
+      },
+    });
   }
 
   return results;
@@ -182,77 +137,59 @@ function generarJSONs(channelStreams) {
     idPrefixes: Object.keys(CHANNELS),
     catalogs: [{ type: "tv", id: "sports_catalog", name: "Sports" }],
   };
-
   const metas = Object.entries(CHANNELS).map(([id, ch]) => ({
     id, type: "tv", name: ch.name, poster: ch.poster, logo: ch.logo, description: ch.description,
   }));
 
-  const catalogData = { metas };
-
   fs.writeFileSync("streams.json", JSON.stringify(channelStreams, null, 2));
   fs.writeFileSync("docs/manifest.json", JSON.stringify(manifest, null, 2));
 
-  const docsCatalogDir = "docs/catalog/tv";
-  if (!fs.existsSync(docsCatalogDir)) fs.mkdirSync(docsCatalogDir, { recursive: true });
-  fs.writeFileSync(`${docsCatalogDir}/sports_catalog.json`, JSON.stringify(catalogData, null, 2));
+  ["docs/catalog/tv", "docs/stream/tv", "docs/meta/tv"].forEach(d => {
+    if (!fs.existsSync(d)) fs.mkdirSync(d, { recursive: true });
+  });
 
-  const docsStreamDir = "docs/stream/tv";
-  if (!fs.existsSync(docsStreamDir)) fs.mkdirSync(docsStreamDir, { recursive: true });
+  fs.writeFileSync("docs/catalog/tv/sports_catalog.json", JSON.stringify({ metas }, null, 2));
+
   for (const [id, data] of Object.entries(channelStreams)) {
-    fs.writeFileSync(`${docsStreamDir}/${id}.json`, JSON.stringify({ streams: data.streams || data }, null, 2));
+    fs.writeFileSync(`docs/stream/tv/${id}.json`, JSON.stringify({ streams: data.streams || data }, null, 2));
   }
-
-  const docsMetaDir = "docs/meta/tv";
-  if (!fs.existsSync(docsMetaDir)) fs.mkdirSync(docsMetaDir, { recursive: true });
   for (const [id, ch] of Object.entries(CHANNELS)) {
-    fs.writeFileSync(`${docsMetaDir}/${id}.json`, JSON.stringify({
+    fs.writeFileSync(`docs/meta/tv/${id}.json`, JSON.stringify({
       meta: { id, type: "tv", name: ch.name, poster: ch.poster, logo: ch.logo, description: ch.description },
     }, null, 2));
   }
 
-  console.log(`\n  ✅ streams.json — ${Object.keys(channelStreams).length} canales`);
-  console.log(`  ✅ docs/manifest.json`);
-  console.log(`  ✅ docs/catalog/tv/sports_catalog.json — ${metas.length} canales`);
-  console.log(`  ✅ docs/stream/tv/ — ${Object.keys(channelStreams).length} archivos`);
-  console.log(`  ✅ docs/meta/tv/ — ${Object.keys(CHANNELS).length} archivos`);
+  console.log(`  ✅ streams.json — ${Object.keys(channelStreams).length} canales`);
+  console.log(`  ✅ docs/`);
+
+  // Clean up: delete old stream files for channels no longer active
+  for (const file of fs.readdirSync("docs/stream/tv")) {
+    const id = file.replace(".json", "");
+    if (!CHANNELS[id]) fs.unlinkSync(`docs/stream/tv/${file}`);
+  }
+  for (const file of fs.readdirSync("docs/meta/tv")) {
+    const id = file.replace(".json", "");
+    if (!CHANNELS[id]) fs.unlinkSync(`docs/meta/tv/${file}`);
+  }
 }
 
 async function main() {
-  console.log(`🚀 Scrapeando streams — ${new Date().toLocaleString()}\n`);
-
+  console.log(`🚀 Scrapeando — ${new Date().toLocaleString()}\n`);
   const channelStreams = {};
 
   for (const [id, ch] of Object.entries(CHANNELS)) {
     console.log(`\n📺 ${ch.name}`);
-
-    const futbolLibreStreams = await scrapeFutbolLibre(id);
-    const tvlibreStreams = await scrapeTvlibre(id);
-
-    let allStreams = [...futbolLibreStreams, ...tvlibreStreams];
-
-    allStreams.sort((a, b) => {
-      const aLa = a.title.includes("la18hd.com") || a.title.includes("futbol-libres");
-      const bLa = b.title.includes("la18hd.com") || b.title.includes("futbol-libres");
-      if (aLa && !bLa) return -1;
-      if (!aLa && bLa) return 1;
-      return 0;
-    });
-
-    const selected = allStreams.slice(0, MAX_OPCIONES);
-
-    if (selected.length > 0) {
-      channelStreams[id] = { ...ch, streams: selected };
-      console.log(`  ✅ ${selected.length} stream(s)`);
+    const streams = await scrapearCanal(id);
+    if (streams.length > 0) {
+      channelStreams[id] = { ...ch, streams };
+      console.log(`  ✅ ${streams.length} stream(s)`);
     } else {
       console.log(`  ⚠️ Sin streams`);
     }
   }
 
   generarJSONs(channelStreams);
-  console.log("\n✅ Scraping completado");
+  console.log("\n✅ Listo");
 }
 
-main().catch((err) => {
-  console.error("❌ Error fatal:", err.message);
-  process.exit(1);
-});
+main().catch(e => { console.error("❌", e.message); process.exit(1); });

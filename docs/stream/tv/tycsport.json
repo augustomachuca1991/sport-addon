@@ -1,42 +1,28 @@
 {
   "streams": [
     {
-      "title": "TyC Sports — futbol-libres",
-      "url": "https://vmkqp.vivolatamz.org:443/lb06/tycsports/index.m3u8?token=af6cf1a3a60abf0fbb33cb8073142750b6080c6f-f3-1781482087-1781428087&ip=20.62.204.22",
+      "title": "TyC Sports — la18hd",
+      "url": "https://c2nvdxq.fubo18.com:443/tycsports/mono.m3u8?token=157c803af9daef0af0bf21af67c53d0cb48f0839-e6-1781455853-1781437853",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://vmkqp.vivolatamz.org",
-            "Referer": "https://vmkqp.vivolatamz.org/",
+            "Origin": "https://c2nvdxq.fubo18.com",
+            "Referer": "https://c2nvdxq.fubo18.com/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
       }
     },
     {
-      "title": "TyC Sports — a2lja3m.fubo18.com",
-      "url": "https://a2lja3m.fubo18.com:443/tycsports/mono.m3u8?token=6c02302c3214569343f17fd3c5cc2cb1057cc32b-24-1781454193-1781436193",
+      "title": "TyC Sports — latamvidz",
+      "url": "https://jwzrh.vivolatamz.org:443/lb03/tycsports/index.m3u8?token=c8ff4f75ed4a5060a7f4f98747295b42112eb869-f5-1781483749-1781429749&ip=200.55.245.145",
       "behaviorHints": {
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Origin": "https://a2lja3m.fubo18.com",
-            "Referer": "https://a2lja3m.fubo18.com/",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-          }
-        }
-      }
-    },
-    {
-      "title": "TyC Sports — sa.streamtpday1.xyz",
-      "url": "https://sa.streamtpday1.xyz:443/global/tycsports/index.m3u8?token=56febebed0592cdbbe60cd6099249550dc55fc27-64-1781482094-1781428094&ip=20.62.204.22",
-      "behaviorHints": {
-        "notWebReady": true,
-        "proxyHeaders": {
-          "request": {
-            "Origin": "https://sa.streamtpday1.xyz",
-            "Referer": "https://sa.streamtpday1.xyz/",
+            "Origin": "https://jwzrh.vivolatamz.org",
+            "Referer": "https://jwzrh.vivolatamz.org/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         }
