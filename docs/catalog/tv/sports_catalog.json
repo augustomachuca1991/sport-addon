@@ -15,6 +15,14 @@
       "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tntsports.svg",
       "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tntsports.svg",
       "description": "TNT Sports en vivo"
+    },
+    {
+      "id": "tycsport",
+      "type": "tv",
+      "name": "TyC Sports",
+      "poster": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
+      "logo": "https://augustomachuca1991.github.io/sport-addon/static/logos/tycsport.svg",
+      "description": "TyC Sports en vivo"
     }
   ]
 }

@@ -7,6 +7,7 @@ const BASE_URL = "https://augustomachuca1991.github.io/sport-addon";
 const CHANNELS = {
   dsports: { name: "DSports", description: "DirecTV Sports en vivo" },
   tntsports: { name: "TNT Sports", description: "TNT Sports en vivo" },
+  tycsport: { name: "TyC Sports", description: "TyC Sports en vivo" },
 };
 
 const imgUrl = (id) => `${BASE_URL}/static/logos/${id}.svg`;

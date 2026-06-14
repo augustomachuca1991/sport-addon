@@ -8,7 +8,7 @@ const POST_IDS = {
   dsports: { post: 47, slug: "directv-sports" },
   tntsports: { post: 50, slug: "tnt-sports" },
   // espnpremium: { post: 35, slug: "espn-premium" },
-  // tycsport: { post: 91, slug: "tyc-sports" },
+  tycsport: { post: 91, slug: "tyc-sports" },
   // espn: { post: 32, slug: "espn-1" },
   // espn2: { post: 33, slug: "espn-2" },
   // espn3: { post: 34, slug: "espn-3" },
@@ -42,12 +42,12 @@ const CHANNELS = {
   //   logo: `${BASE_URL}/static/logos/espnpremium.svg`,
   //   description: "ESPN Premium en vivo",
   // },
-  // tycsport: {
-  //   name: "TyC Sports",
-  //   poster: `${BASE_URL}/static/logos/tycsport.svg`,
-  //   logo: `${BASE_URL}/static/logos/tycsport.svg`,
-  //   description: "TyC Sports en vivo",
-  // },
+  tycsport: {
+    name: "TyC Sports",
+    poster: `${BASE_URL}/static/logos/tycsport.svg`,
+    logo: `${BASE_URL}/static/logos/tycsport.svg`,
+    description: "TyC Sports en vivo",
+  },
   // espn: {
   //   name: "ESPN",
   //   poster: `${BASE_URL}/static/logos/espn.svg`,
@@ -190,6 +190,13 @@ async function capturarStreams(browser, urls, nombre) {
     }
     await page.close();
   }
+  streams.sort((a, b) => {
+    const aLa = a.title.includes("la14hd.com") || a.title.includes("la18hd.com");
+    const bLa = b.title.includes("la14hd.com") || b.title.includes("la18hd.com");
+    if (aLa && !bLa) return -1;
+    if (!aLa && bLa) return 1;
+    return 0;
+  });
   return streams;
 }
 

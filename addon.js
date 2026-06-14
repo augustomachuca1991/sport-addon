@@ -8,7 +8,7 @@ const STATIC_STREAMS = {
   dsports: [{ title: "DSports — HLS", url: "https://wf6kt.envivoslatam.org/dsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=8e18c5903d70f251fcd90b4b1e52f97544a4f383-07-1778581987-1778527987" }],
   tntsports: [{ title: "TNT Sports — HLS", url: "https://cgxheq.fubohd.com/tntsports/mono.m3u8?token=19fd22e88147484488b5b4d3a805ca5e972d428f-ec-1778556817-1778538817" }],
   // espnpremium: [{ title: "ESPN Premium — HLS", url: "..." }],
-  // tycsport: [{ title: "TyC Sports — HLS", url: "..." }],
+  tycsport: [{ title: "TyC Sports — HLS", url: "https://xrpma.vivolatamz.org/tycsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=16e01e89ffd57e5455b6362f8fba5539ed2bf4ca-26-1781465330-1781411330" }],
   // espn: [{ title: "ESPN — HLS", url: "..." }],
   // foxsports: [{ title: "Fox Sports — HLS", url: "..." }],
   // tudn: [{ title: "TUDN — HLS", url: "..." }],
@@ -30,7 +30,7 @@ const channels = {
     description: "TNT Sports en vivo",
   },
   // espnpremium: { name: "ESPN Premium", poster: `${BASE_URL}/static/logos/espnpremium.svg`, logo: `${BASE_URL}/static/logos/espnpremium.svg`, description: "ESPN Premium en vivo" },
-  // tycsport: { name: "TyC Sports", poster: `${BASE_URL}/static/logos/tycsport.svg`, logo: `${BASE_URL}/static/logos/tycsport.svg`, description: "TyC Sports en vivo" },
+  tycsport: { name: "TyC Sports", poster: `${BASE_URL}/static/logos/tycsport.svg`, logo: `${BASE_URL}/static/logos/tycsport.svg`, description: "TyC Sports en vivo" },
   // espn: { name: "ESPN", poster: `${BASE_URL}/static/logos/espn.svg`, logo: `${BASE_URL}/static/logos/espn.svg`, description: "ESPN en vivo" },
   // espn2: { name: "ESPN 2", poster: `${BASE_URL}/static/logos/espn2.svg`, logo: `${BASE_URL}/static/logos/espn2.svg`, description: "ESPN 2 en vivo" },
   // espn3: { name: "ESPN 3", poster: `${BASE_URL}/static/logos/espn3.svg`, logo: `${BASE_URL}/static/logos/espn3.svg`, description: "ESPN 3 en vivo" },
@@ -46,16 +46,18 @@ const channels = {
 function cargarStreams() {
   try {
     const data = JSON.parse(fs.readFileSync("streams.json", "utf8"));
+    const entries = Object.entries(data);
     let count = 0;
-    for (const [id, ch] of Object.entries(data)) {
+    for (const [id, ch] of entries) {
       if (channels[id] && ch.streams && ch.streams.length > 0) {
         channels[id].streams = ch.streams;
         count++;
       }
     }
+    if (count === 0) throw new Error("no streams loaded");
     console.log(`📡 streams.json cargado: ${count} canales actualizados`);
   } catch (e) {
-    console.log("📡 streams.json no encontrado, usando streams estáticos");
+    console.log("📡 streams.json no encontrado o vacío, usando streams estáticos");
     for (const [id, streams] of Object.entries(STATIC_STREAMS)) {
       if (channels[id]) channels[id].streams = streams;
     }
