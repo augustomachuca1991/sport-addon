@@ -1,89 +1,74 @@
 const { addonBuilder } = require("stremio-addon-sdk");
 const express = require("express");
-const fs = require("fs");
 
 const PORT = process.env.PORT || 7000;
-
-const STATIC_STREAMS = {
-  dsports: [{ title: "DSports — HLS", url: "https://wf6kt.envivoslatam.org/dsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=8e18c5903d70f251fcd90b4b1e52f97544a4f383-07-1778581987-1778527987" }],
-  tntsports: [{ title: "TNT Sports — HLS", url: "https://cgxheq.fubohd.com/tntsports/mono.m3u8?token=19fd22e88147484488b5b4d3a805ca5e972d428f-ec-1778556817-1778538817" }],
-  espnpremium: [{ title: "ESPN Premium — HLS", url: "..." }],
-  // tycsport: [{ title: "TyC Sports — HLS", url: "https://xrpma.vivolatamz.org/tycsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=16e01e89ffd57e5455b6362f8fba5539ed2bf4ca-26-1781465330-1781411330" }],
-  // espn: [{ title: "ESPN — HLS", url: "..." }],
-  // espn2: [{ title: "ESPN 2 — HLS", url: "..." }],
-  // espn3: [{ title: "ESPN 3 — HLS", url: "..." }],
-  // dsports2: [{ title: "DSports 2 — HLS", url: "..." }],
-  // dsportsplus: [{ title: "DSports+ — HLS", url: "..." }],
-  // foxsports: [{ title: "Fox Sports — HLS", url: "..." }],
-  // foxsports2: [{ title: "Fox Sports 2 — HLS", url: "..." }],
-  // foxsports3: [{ title: "Fox Sports 3 — HLS", url: "..." }],
-  // tudn: [{ title: "TUDN — HLS", url: "..." }],
-  // winsport: [{ title: "Win Sports+ — HLS", url: "..." }],
-  // telefe: [{ title: "Telefe — HLS", url: "..." }],
-};
-
-const BASE_URL = "https://augustomachuca1991.github.io/sport-addon";
 
 const channels = {
   dsports: {
     name: "DSports",
-    poster: `${BASE_URL}/static/logos/dsports.svg`,
-    logo: `${BASE_URL}/static/logos/dsports.svg`,
-    description: "DirecTV Sports en vivo",
+    poster:
+      "https://imgs.search.brave.com/ZkIS7DI98QxJd0-A9f1zMs9X83l-7gYScPztHxYMfOk/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2xv/Z29wZWRpYS9pbWFn/ZXMvMS8xNS9EaXJl/Y1RWU3BvcnRzMjAx/OC5wbmcvcmV2aXNp/b24vbGF0ZXN0L3Nt/YXJ0L3dpZHRoLzE2/MC9oZWlnaHQvMTIw/P2NiPTIwMTgwMzAx/MjMzODA0",
+    logo: "https://bestleague.world/img/dsportsplus.webp",
+    description: "Direct TV Sports en vivo",
+    streams: [
+      {
+        title: "DSports — Auto",
+        url: "https://wf6kt.envivoslatam.org/dsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=8e18c5903d70f251fcd90b4b1e52f97544a4f383-07-1778581987-1778527987",
+      },
+    ],
   },
+
   tntsports: {
     name: "TNT Sports",
-    poster: `${BASE_URL}/static/logos/tntsports.svg`,
-    logo: `${BASE_URL}/static/logos/tntsports.svg`,
+    poster:
+      "https://imgs.search.brave.com/bVoS1l-fg9Smd76bBVrKdAy07e5_9cgNhYaE4vN2_BA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbGF5/LWxoLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9MNVFkSzZwWmVI/c2U5THo5dUc1cDdo/SjFCTWRFX3VxSU1N/N1dTeEJLVlJCaTgz/ZFRIdlVOT1lQSjRG/SWczNlpTeXBJPXcy/NDAtaDQ4MC1ydw",
+    logo: "https://assets.tntsports.com.ar/__export/1717073602419/sites/tntsports/arte/logo_header_blanco_20240530.svg",
     description: "TNT Sports en vivo",
+    streams: [
+      {
+        title: "TNT Sports — Opción 1",
+        url: "https://pvtn5y.envivoslatam.org/tntsports/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=34916878f8c30d8c4860e388e977a2e56999b8b1-c7-1778584686-1778530686",
+      },
+      {
+        title: "TNT Sports — Opción 2",
+        url: "https://cgxheq.fubohd.com/tntsports/mono.m3u8?token=19fd22e88147484488b5b4d3a805ca5e972d428f-ec-1778556817-1778538817",
+      },
+    ],
   },
-  espnpremium: { name: "ESPN Premium", poster: `${BASE_URL}/static/logos/espnpremium.svg`, logo: `${BASE_URL}/static/logos/espnpremium.svg`, description: "ESPN Premium en vivo" },
-  // tycsport: { name: "TyC Sports", poster: `${BASE_URL}/static/logos/tycsport.svg`, logo: `${BASE_URL}/static/logos/tycsport.svg`, description: "TyC Sports en vivo" },
-  // espn: { name: "ESPN", poster: `${BASE_URL}/static/logos/espn.svg`, logo: `${BASE_URL}/static/logos/espn.svg`, description: "ESPN en vivo" },
-  // espn2: { name: "ESPN 2", poster: `${BASE_URL}/static/logos/espn2.svg`, logo: `${BASE_URL}/static/logos/espn2.svg`, description: "ESPN 2 en vivo" },
-  // espn3: { name: "ESPN 3", poster: `${BASE_URL}/static/logos/espn3.svg`, logo: `${BASE_URL}/static/logos/espn3.svg`, description: "ESPN 3 en vivo" },
-  // dsports2: { name: "DSports 2", poster: `${BASE_URL}/static/logos/dsports2.svg`, logo: `${BASE_URL}/static/logos/dsports2.svg`, description: "DirecTV Sports 2 en vivo" },
-  // dsportsplus: { name: "DSports+", poster: `${BASE_URL}/static/logos/dsportsplus.svg`, logo: `${BASE_URL}/static/logos/dsportsplus.svg`, description: "DSports+ en vivo" },
-  // foxsports: { name: "Fox Sports", poster: `${BASE_URL}/static/logos/foxsports.svg`, logo: `${BASE_URL}/static/logos/foxsports.svg`, description: "Fox Sports en vivo" },
-  // foxsports2: { name: "Fox Sports 2", poster: `${BASE_URL}/static/logos/foxsports2.svg`, logo: `${BASE_URL}/static/logos/foxsports2.svg`, description: "Fox Sports 2 en vivo" },
-  // foxsports3: { name: "Fox Sports 3", poster: `${BASE_URL}/static/logos/foxsports3.svg`, logo: `${BASE_URL}/static/logos/foxsports3.svg`, description: "Fox Sports 3 en vivo" },
-  // tudn: { name: "TUDN", poster: `${BASE_URL}/static/logos/tudn.svg`, logo: `${BASE_URL}/static/logos/tudn.svg`, description: "TUDN en vivo" },
-  // winsport: { name: "Win Sports+", poster: `${BASE_URL}/static/logos/winsport.svg`, logo: `${BASE_URL}/static/logos/winsport.svg`, description: "Win Sports+ en vivo" },
-  // telefe: { name: "Telefe", poster: `${BASE_URL}/static/logos/telefe.svg`, logo: `${BASE_URL}/static/logos/telefe.svg`, description: "Telefe en vivo" },
+
+  espnpremium: {
+    name: "ESPN Premium",
+    poster: "https://angulismo-pics.pages.dev/espn-premium.png",
+    logo: "https://imgs.search.brave.com/BoO3XQfLmGrGe7PEeBxPtiJC-pAhy_PM-BQvFg544rY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2ExL0VT/UE5fUHJlbWl1bV9s/b2dvLnN2Zy8yNTBw/eC1FU1BOX1ByZW1p/dW1fbG9nby5zdmcu/cG5n",
+    description: "ESPN Premium en vivo",
+    streams: [
+      {
+        title: "ESPN Premium — Opción 1",
+        url: "https://xky9q.envivoslatam.org/espnpremium/tracks-v1a1/mono.m3u8?ip=200.55.245.145&token=6b8af1b0712202a27c736953f17f7390b6faa84f-53-1778584587-1778530587",
+      },
+      {
+        title: "ESPN Premium — Opción 2",
+        url: "https://bgfuzq.fubohd.com/espnpremium/mono.m3u8?token=087d9925d50a99d6f9e4896d60aff96f1e59aeae-cd-1778556746-1778538746",
+      },
+    ],
+  },
 };
-
-function cargarStreams() {
-  try {
-    const data = JSON.parse(fs.readFileSync("streams.json", "utf8"));
-    const entries = Object.entries(data);
-    let count = 0;
-    for (const [id, ch] of entries) {
-      if (channels[id] && ch.streams && ch.streams.length > 0) {
-        channels[id].streams = ch.streams;
-        count++;
-      }
-    }
-    if (count === 0) throw new Error("no streams loaded");
-    console.log(`📡 streams.json cargado: ${count} canales actualizados`);
-  } catch (e) {
-    console.log("📡 streams.json no encontrado o vacío, usando streams estáticos");
-    for (const [id, streams] of Object.entries(STATIC_STREAMS)) {
-      if (channels[id]) channels[id].streams = streams;
-    }
-  }
-}
-
-cargarStreams();
 
 const manifest = {
   id: "org.local.sports.autoquality",
   version: "1.2.0",
   name: "Sports Auto Quality",
-  description: "Canales deportivos en vivo",
+  description: "Canales deportivos",
   resources: ["catalog", "meta", "stream"],
   types: ["tv"],
   idPrefixes: Object.keys(channels),
-  catalogs: [{ type: "tv", id: "sports_catalog", name: "Sports" }],
+  catalogs: [
+    {
+      type: "tv",
+      id: "sports_catalog",
+      name: "Sports",
+    },
+  ],
 };
 
 const builder = new addonBuilder(manifest);
@@ -91,7 +76,8 @@ const builder = new addonBuilder(manifest);
 builder.defineCatalogHandler(() =>
   Promise.resolve({
     metas: Object.entries(channels).map(([id, channel]) => ({
-      id, type: "tv",
+      id,
+      type: "tv",
       name: channel.name,
       poster: channel.poster,
       logo: channel?.logo,
@@ -102,27 +88,52 @@ builder.defineCatalogHandler(() =>
 
 builder.defineMetaHandler(({ id }) => {
   const channel = channels[id];
-  if (!channel) return Promise.resolve({ meta: null });
+
+  if (!channel) {
+    return Promise.resolve({ meta: null });
+  }
+
   return Promise.resolve({
-    meta: { id, type: "tv", name: channel.name, poster: channel.poster, logo: channel?.logo, description: channel?.description },
+    meta: {
+      id,
+      type: "tv",
+      name: channel.name,
+      poster: channel.poster,
+      logo: channel?.logo,
+      description: channel?.description,
+    },
   });
 });
 
 builder.defineStreamHandler(({ type, id }) => {
-  if (type !== "tv") return Promise.resolve({ streams: [] });
+  if (type !== "tv") {
+    return Promise.resolve({ streams: [] });
+  }
+
   const channel = channels[id];
-  if (!channel) return Promise.resolve({ streams: [] });
-  return Promise.resolve({ streams: channel.streams || [] });
+
+  if (!channel) {
+    return Promise.resolve({ streams: [] });
+  }
+
+  return Promise.resolve({
+    streams: channel.streams,
+  });
 });
 
 const app = express();
 
+// CORS para todas las rutas
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST,OPTIONS");
+
   res.setHeader("ngrok-skip-browser-warning", "true");
-  if (req.method === "OPTIONS") return res.sendStatus(204);
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
   next();
 });
 
@@ -130,17 +141,23 @@ app.use(express.json());
 
 app.post("/update", (req, res) => {
   const { channel, streams } = req.body;
-  if (!channels[channel]) return res.status(404).json({ error: `Canal '${channel}' no existe` });
-  if (!Array.isArray(streams) || streams.length === 0) return res.status(400).json({ error: "streams inválidos" });
+
+  if (!channels[channel]) {
+    return res.status(404).json({ error: `Canal '${channel}' no existe` });
+  }
+
+  if (!Array.isArray(streams) || streams.length === 0) {
+    return res.status(400).json({ error: "streams inválidos" });
+  }
+
   channels[channel].streams = streams;
   console.log(`✅ ${channel} actualizado con ${streams.length} stream(s)`);
   return res.json({ ok: true });
 });
 
-app.get("/ping", (req, res) => res.send("pong"));
-
+// Montá el addon en Express
 app.use(require("stremio-addon-sdk").getRouter(builder.getInterface()));
 
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Addon local corriendo en el puerto ${PORT}`);
+  console.log(`Addon corriendo en el puerto ${PORT}`);
 });
