@@ -210,28 +210,48 @@ async function capturarStreams(browser, urls, nombre) {
   return streams;
 }
 
-async function subirARender(channelId, streams) {
+async function subirARender(channelId, streams, retries = 3) {
   if (streams.length === 0) {
     console.log(`  ⚠️  Sin streams para subir`);
     return;
   }
 
-  try {
-    const res = await fetch(`${RENDER_URL}/update`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ channel: channelId, streams }),
-    });
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(`${RENDER_URL}/update`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ channel: channelId, streams }),
+      });
 
-    const data = await res.json();
-    console.log(`  Render respondió: ${JSON.stringify(data)}`);
-    if (res.ok) {
-      console.log(`  ✅ ${streams.length} stream(s) subidos`);
-    } else {
-      console.error(`  ❌ Error: ${data.error}`);
+      const text = await res.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        if (text.includes("<!DOCTYPE") && attempt < retries) {
+          console.log(`  ⏳ Render dormido, reintentando (${attempt}/${retries})...`);
+          await new Promise(r => setTimeout(r, 30000));
+          continue;
+        }
+        throw new Error(`Respuesta inesperada: ${text.slice(0, 100)}`);
+      }
+
+      console.log(`  Render respondió: ${JSON.stringify(data)}`);
+      if (res.ok) {
+        console.log(`  ✅ ${streams.length} stream(s) subidos`);
+      } else {
+        console.error(`  ❌ Error: ${data.error}`);
+      }
+      return;
+    } catch (err) {
+      if (attempt < retries) {
+        console.log(`  ⏳ Error, reintentando (${attempt}/${retries}): ${err.message}`);
+        await new Promise(r => setTimeout(r, 30000));
+        continue;
+      }
+      console.error(`  ❌ Error al subir: ${err.message}`);
     }
-  } catch (err) {
-    console.error(`  ❌ Error al subir: ${err.message}`);
   }
 }
 
