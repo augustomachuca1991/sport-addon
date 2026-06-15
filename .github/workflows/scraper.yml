@@ -1,0 +1,25 @@
+name: Scraper
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: node scrapper.js
+        env:
+          RENDER_URL: ${{ secrets.RENDER_URL }}
+          CONCURRENCY: "3"
+          PAGE_TIMEOUT: "20000"
+          POST_WAIT_MS: "5000"
+          MAX_OPTIONS: "2"
+          CI: "true"
