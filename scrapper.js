@@ -16,6 +16,7 @@ const CANALES = {
       "https://la14hd.com/vivo/canales.php?stream=dsports",
       "https://la18hd.com/vivo/canales.php?stream=dsports",
       "https://streamtpday1.xyz/global1.php?stream=dsports",
+      "https://skylivefu.com/live.php?stream=dsports",
     ],
   },
   tycsports: {
@@ -25,6 +26,7 @@ const CANALES = {
       "https://la18hd.com/vivo/canales.php?stream=tycsports",
       "https://streamtpday1.xyz/global1.php?stream=tycsports",
       "https://welivesports.cfd/embed/tycsportarg.php",
+      "https://skylivefu.com/live.php?stream=tycsports",
     ],
   },
   tntsports: {
@@ -35,6 +37,7 @@ const CANALES = {
       "https://la14hd.com/vivo/canales.php?stream=tntsports",
       "https://la18hd.com/vivo/canal.php?stream=tntsports",
       "https://streamtpday1.xyz/global1.php?stream=tntsports",
+      "https://skylivefu.com/live.php?stream=tntsports",
     ],
   },
   espnpremium: {
@@ -44,6 +47,7 @@ const CANALES = {
       "https://nebunexa.life/cvatt.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&lang=1",
       "https://la14hd.com/vivo/canales.php?stream=espnpremium",
       "https://la18hd.com/vivo/canales.php?stream=espnpremium",
+      "https://skylivefu.com/live.php?stream=espnpremium",
     ],
   },
   espn1: {
@@ -53,6 +57,7 @@ const CANALES = {
       "https://la18hd.com/vivo/canales.php?stream=espn",
       "https://streamtpday1.xyz/global1.php?stream=espn",
       "https://welivesports.cfd/embed/espn1arg.php",
+      "https://skylivefu.com/live.php?stream=espn",
     ],
   },
   espn2: {
@@ -62,6 +67,7 @@ const CANALES = {
       "https://la18hd.com/vivo/canales.php?stream=espn2",
       "https://streamtpday1.xyz/global1.php?stream=espn2",
       "https://welivesports.cfd/embed/espn2arg.php",
+      "https://skylivefu.com/live.php?stream=espn2",
     ],
   },
   espn3: {
@@ -70,6 +76,7 @@ const CANALES = {
       "https://tvlibre-online.com/html/fl/?get=RVNQTjM&lang=1",
       "https://la18hd.com/vivo/canales.php?stream=espn3",
       "https://streamtpday1.xyz/global1.php?stream=espn3",
+      "https://skylivefu.com/live.php?stream=espn3",
     ],
   },
   foxsports1: {
@@ -79,6 +86,7 @@ const CANALES = {
       "https://la18hd.com/vivo/canales.php?stream=foxsports",
       "https://streamtpday1.xyz/global1.php?stream=fox1ar",
       "https://welivesports.cfd/embed/foxsp1arg.php",
+      "https://skylivefu.com/live.php?stream=foxsports",
     ],
   },
   foxsports2: {
@@ -87,6 +95,7 @@ const CANALES = {
       "https://tvlibre-online.com/html/fl/?get=Rm94U3BvcnRzMkhE&lang=1",
       "https://la18hd.com/vivo/canales.php?stream=foxsports2",
       "https://streamtpday1.xyz/global1.php?stream=fox2ar",
+      "https://skylivefu.com/live.php?stream=foxsports2",
     ],
   },
   foxsports3: {
@@ -95,6 +104,7 @@ const CANALES = {
       "https://tvlibre-online.com/html/fl/?get=Rm94U3BvcnRzM0hE&lang=1",
       "https://la18hd.com/vivo/canales.php?stream=foxsports3",
       "https://streamtpday1.xyz/global1.php?stream=fox3ar",
+      "https://skylivefu.com/live.php?stream=foxsports3",
     ],
   },
   dsports2: {
@@ -102,6 +112,7 @@ const CANALES = {
     urls: [
       "https://la18hd.com/vivo/canales.php?stream=dsports2",
       "https://streamtpday1.xyz/global1.php?stream=dsports2",
+      "https://skylivefu.com/live.php?stream=dsports2",
     ],
   },
   dsportsplus: {
@@ -109,12 +120,14 @@ const CANALES = {
     urls: [
       "https://streamtpday1.xyz/global1.php?stream=dsportsplus",
       "https://canalesdeportivos.net/directvplushd.php",
+      "https://skylivefu.com/live.php?stream=dsportsplus",
     ],
   },
   telefe: {
     nombre: "Telefe",
     urls: [
       "https://tvlibre-online.com/html/fl/?get=VGVsZWZlSEQ&lang=1",
+      "https://skylivefu.com/live.php?stream=telefe",
     ],
   },
   tvpublica: {
@@ -122,12 +135,14 @@ const CANALES = {
     urls: [
       "https://tvlibre-online.com/html/fl/?get=Q2FuYWw3&lang=1",
       "https://streamtpday1.xyz/global1.php?stream=tv_publica",
+      "https://skylivefu.com/live.php?stream=tv_publica",
     ],
   },
   deportv: {
     nombre: "DeporTV",
     urls: [
       "https://tvlibre-online.com/html/fl/?get=RGVwb3JUVkhE&lang=1",
+      "https://skylivefu.com/live.php?stream=deportv",
     ],
   },
   tudn: {
@@ -135,6 +150,7 @@ const CANALES = {
     urls: [
       "https://streamtpday1.xyz/global1.php?stream=tudn_usa",
       "https://la18hd.com/vivo/canales.php?stream=tudn",
+      "https://skylivefu.com/live.php?stream=tudn_usa",
     ],
   },
 };
