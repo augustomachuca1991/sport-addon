@@ -1,6 +1,11 @@
+require("dotenv").config();
+
 const puppeteer = require("puppeteer");
 
-const RENDER_URL = "https://sport-addon.onrender.com";
+const RENDER_URL = process.env.RENDER_URL || "https://sport-addon.onrender.com";
+const CONCURRENCY = parseInt(process.env.CONCURRENCY, 10) || 4;
+const PAGE_TIMEOUT = parseInt(process.env.PAGE_TIMEOUT, 10) || 15000;
+const POST_WAIT_MS = parseInt(process.env.POST_WAIT_MS, 10) || 4000;
 
 const CANALES = {
   dsports: {
@@ -134,16 +139,7 @@ const CANALES = {
   },
 };
 
-async function capturarStreams(urls, nombre) {
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--ignore-certificate-errors",
-    ],
-  });
-
+async function capturarStreams(browser, urls, nombre) {
   const streams = [];
 
   for (const [i, url] of urls.entries()) {
@@ -152,44 +148,49 @@ async function capturarStreams(urls, nombre) {
 
     page.on("request", (req) => {
       const u = req.url();
-      if ((u.includes(".m3u8") || u.includes(".mpd")) && !capturada) {
+      if (u.includes(".m3u8") && !capturada) {
         capturada = u;
       }
     });
 
     try {
       console.log(`  🔍 Opción ${i + 1}: ${url}`);
-      await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
-      await new Promise((r) => setTimeout(r, 8000));
-
-      if (capturada) {
-        console.log(`  ✅ Capturada: ${capturada}`);
-        streams.push({
-          title: `${nombre} — Opción ${i + 1}`,
-          url: capturada,
-          referrer: url,
-          behaviorHints: {
-            notWebReady: true,
-            proxyHeaders: {
-              request: {
-                Origin: new URL(url).origin,
-                Referer: url,
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-              },
-            },
-          },
-        });
-      } else {
-        console.log(`  ⚠️  Sin stream en opción ${i + 1}`);
-      }
+      await page.goto(url, { waitUntil: "networkidle2", timeout: PAGE_TIMEOUT });
     } catch (err) {
-      console.error(`  ❌ Error: ${err.message}`);
+      if (!capturada) {
+        console.error(`  ⚠️  Timeout/error: ${err.message}`);
+      }
     }
 
+    if (!capturada) {
+      await new Promise((r) => setTimeout(r, POST_WAIT_MS));
+    }
+
+    if (capturada) {
+      console.log(`  ✅ Capturada: ${capturada}`);
+      streams.push({
+        title: `${nombre} — Opción ${i + 1}`,
+        url: capturada,
+        referrer: url,
+        behaviorHints: {
+          notWebReady: true,
+          proxyHeaders: {
+            request: {
+              Origin: new URL(url).origin,
+              Referer: url,
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            },
+          },
+        },
+      });
+      await page.close();
+      break;
+    }
+
+    console.log(`  ⚠️  Sin stream en opción ${i + 1}`);
     await page.close();
   }
 
-  await browser.close();
   return streams;
 }
 
@@ -206,10 +207,8 @@ async function subirARender(channelId, streams) {
       body: JSON.stringify({ channel: channelId, streams }),
     });
 
-    const text = await res.text(); // ← texto plano primero
-    console.log(`  Render respondió: ${text}`);
-
-    const data = JSON.parse(text);
+    const data = await res.json();
+    console.log(`  Render respondió: ${JSON.stringify(data)}`);
     if (res.ok) {
       console.log(`  ✅ ${streams.length} stream(s) subidos`);
     } else {
@@ -223,15 +222,40 @@ async function subirARender(channelId, streams) {
 async function correr() {
   console.log(`\n🚀 Iniciando — ${new Date().toLocaleString()}`);
 
-  for (const [id, canal] of Object.entries(CANALES)) {
-    console.log(`\n📺 Procesando ${canal.nombre}...`);
-    const streams = await capturarStreams(canal.urls, canal.nombre);
-    await subirARender(id, streams);
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--ignore-certificate-errors",
+    ],
+  });
+
+  const entries = Object.entries(CANALES);
+
+  for (let i = 0; i < entries.length; i += CONCURRENCY) {
+    const batch = entries.slice(i, i + CONCURRENCY);
+    await Promise.all(
+      batch.map(async ([id, canal]) => {
+        console.log(`\n📺 Procesando ${canal.nombre}...`);
+        const streams = await capturarStreams(browser, canal.urls, canal.nombre);
+        await subirARender(id, streams);
+      })
+    );
   }
 
+  await browser.close();
   console.log("\n✅ Listo");
 }
 
-correr().then(() => process.env.CI && process.exit(0));
+correr()
+  .then(() => {
+    if (process.env.CI) process.exit(0);
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+
 setInterval(correr, 12 * 60 * 60 * 1000);
 console.log("⏰ Scraper programado cada 12 horas");
