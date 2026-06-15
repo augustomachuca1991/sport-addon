@@ -183,12 +183,12 @@ async function capturarStreams(browser, urls, nombre) {
           },
         },
       });
-      await page.close();
+      try { await page.close(); } catch (_) {}
       if (streams.length >= (parseInt(process.env.MAX_OPTIONS, 10) || 3)) break;
     }
 
     console.log(`  ⚠️  Sin stream en opción ${i + 1}`);
-    await page.close();
+    try { await page.close(); } catch (_) {}
   }
 
   return streams;
