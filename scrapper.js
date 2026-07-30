@@ -293,5 +293,4 @@ correr()
     process.exit(1);
   });
 
-setInterval(correr, 12 * 60 * 60 * 1000);
-console.log("⏰ Scraper programado cada 12 horas");
+
